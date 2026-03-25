@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IKDesign株式会社 | 不動産コンサルティング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;background:#fff;}
+.lp{max-width:900px;margin:0 auto;}
+
+/* ── ナビ ── */
+.nav{background:#fff;border-bottom:1px solid #eee;padding:15px 52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:16px;color:#0d1b3e;letter-spacing:2px;}
+.nav-logo span{color:#c9a84c;}
+.nav-menu{display:flex;gap:24px;}
+.nav-menu a{font-size:10px;color:#666;text-decoration:none;letter-spacing:1.5px;}
+.nav-btn{background:none;border:1px solid #0d1b3e;color:#0d1b3e;font-size:10px;padding:7px 20px;cursor:pointer;letter-spacing:1.5px;}
+
+/* ── ヒーロー ── */
+.hero{position:relative;overflow:hidden;min-height:520px;display:grid;grid-template-columns:1fr 1fr;}
+.hero-bg{position:absolute;top:0;left:0;width:52%;height:100%;background:#0d1b3e;clip-path:polygon(0 0,100% 0,88% 100%,0 100%);z-index:0;}
+.hero-bg-top{position:absolute;top:0;left:0;width:52%;height:3px;background:#c9a84c;z-index:1;}
+.hero-left{position:relative;z-index:2;padding:64px 48px 56px 52px;display:flex;flex-direction:column;justify-content:space-between;}
+.hl-logo{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:3px;margin-bottom:40px;font-family:'Cormorant Garamond',serif;}
+.hl-logo span{color:#c9a84c;}
+.hl-catch{margin-bottom:36px;}
+.hl-tag{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.hl-tag-line{width:28px;height:1px;background:#c9a84c;}
+.hl-tag-text{font-size:9px;color:#c9a84c;letter-spacing:3px;}
+.hl-catch h1{font-family:'Noto Serif JP',serif;font-size:38px;font-weight:200;color:#fff;line-height:1.7;letter-spacing:0.03em;}
+.hl-catch h1 .sep{color:#c9a84c;font-weight:200;}
+.hl-catch h1 em{font-weight:600;font-style:normal;}
+.hl-en{font-family:'Cormorant Garamond',serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:5px;font-style:italic;margin-top:14px;}
+.hl-quals{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+.hlq{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+.hlq:last-child{border-bottom:none;}
+.hlq-line{width:16px;height:1px;background:#c9a84c;flex-shrink:0;}
+.hlq-text{font-size:11px;color:rgba(255,255,255,0.65);}
+.hl-btn{background:none;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:11px;padding:13px 28px;cursor:pointer;letter-spacing:2px;display:inline-flex;align-items:center;gap:12px;align-self:flex-start;}
+.hl-btn-arrow{width:18px;height:1px;background:#c9a84c;position:relative;flex-shrink:0;}
+.hl-btn-arrow::after{content:'';position:absolute;right:0;top:-3px;width:5px;height:5px;border-top:1px solid #c9a84c;border-right:1px solid #c9a84c;transform:rotate(45deg);}
+.hero-right{position:relative;z-index:2;padding:64px 44px 56px 64px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;}
+.hr-label{font-size:9px;color:#c9a84c;letter-spacing:3px;margin-bottom:16px;}
+.hr-desc{font-family:'Noto Serif JP',serif;font-size:17px;color:#0d1b3e;line-height:1.9;font-weight:400;margin-bottom:20px;}
+.hr-body{font-size:12px;color:#888;line-height:2.1;border-left:1px solid #c9a84c;padding-left:16px;margin-bottom:36px;}
+.hr-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#eee;margin-bottom:32px;}
+.hrn-item{background:#fff;padding:18px 16px;}
+.hrn-en{font-family:'Cormorant Garamond',serif;font-size:9px;color:#c9a84c;letter-spacing:2px;margin-bottom:6px;}
+.hrn-n{font-family:'Cormorant Garamond',serif;font-size:36px;color:#0d1b3e;font-weight:300;line-height:1;}
+.hrn-u{font-size:11px;color:#c9a84c;}
+.hrn-l{font-size:10px;color:#aaa;margin-top:5px;line-height:1.5;}
+.hr-tel{border-top:1px solid #eee;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;}
+.hr-tel-label{font-size:9px;color:#aaa;letter-spacing:2px;margin-bottom:4px;}
+.hr-tel-num{font-family:'Cormorant Garamond',serif;font-size:24px;color:#0d1b3e;font-weight:300;}
+.hr-tel-sub{font-size:10px;color:#bbb;margin-top:3px;}
+.hr-free{background:#0d1b3e;color:#fff;font-size:10px;padding:10px 20px;cursor:pointer;border:none;letter-spacing:1px;}
+
+/* ストリップ */
+.strip{background:#f8f8f8;border-top:1px solid #eee;padding:14px 52px;display:flex;gap:0;}
+.strip-item{display:flex;align-items:center;gap:7px;padding:0 24px;border-right:1px solid #e0e0e0;}
+.strip-item:first-child{padding-left:0;}
+.strip-item:last-child{border-right:none;}
+.strip-dot{width:4px;height:4px;background:#c9a84c;border-radius:50%;flex-shrink:0;}
+.strip-text{font-size:10px;color:#666;letter-spacing:0.5px;}
+
+/* ── 共通 ── */
+.sl{font-size:11px;letter-spacing:3px;color:#c9a84c;margin-bottom:10px;}
+.st{font-family:'Noto Serif JP',serif;font-size:24px;color:#0d1b3e;font-weight:600;line-height:1.6;margin-bottom:10px;}
+.stw{font-family:'Noto Serif JP',serif;font-size:24px;color:#fff;font-weight:600;line-height:1.6;margin-bottom:10px;}
+.sd{font-size:13px;color:#666;line-height:2;max-width:640px;margin-bottom:36px;}
+.sdw{font-size:13px;color:rgba(255,255,255,0.6);line-height:2;max-width:640px;margin-bottom:36px;}
+
+/* ── お悩み ── */
+.concerns{background:#f0ede6;padding:64px 48px;}
+.concerns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0d9ce;}
+.concern-card{background:#fff;padding:24px 20px;}
+.concern-q{font-size:10px;color:#c9a84c;letter-spacing:1px;margin-bottom:8px;}
+.concern-card h3{font-size:13px;color:#0d1b3e;font-weight:500;line-height:1.8;margin-bottom:8px;}
+.concern-card p{font-size:11px;color:#888;line-height:1.8;}
+
+/* ── 4大アピール ── */
+.appeal{background:#fff;padding:64px 48px;}
+.appeal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.appeal-card{padding:28px 24px;border:1px solid #e8e8e8;border-top:3px solid #c9a84c;position:relative;overflow:hidden;}
+.appeal-card.navy{border-top:3px solid #0d1b3e;}
+.appeal-bg-num{font-family:'Noto Serif JP',serif;font-size:64px;color:#f5f5f5;font-weight:600;position:absolute;bottom:-8px;right:12px;line-height:1;}
+.appeal-icon{width:40px;height:40px;background:#0d1b3e;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.appeal-icon svg{width:20px;height:20px;fill:none;stroke:#c9a84c;stroke-width:1.5;}
+.appeal-tag{font-size:10px;color:#c9a84c;letter-spacing:2px;margin-bottom:6px;}
+.appeal-card h3{font-family:'Noto Serif JP',serif;font-size:16px;color:#0d1b3e;font-weight:600;margin-bottom:8px;}
+.appeal-card p{font-size:12px;color:#777;line-height:2;margin-bottom:10px;}
+.appeal-list{list-style:none;}
+.appeal-list li{font-size:11px;color:#555;padding:5px 0 5px 12px;border-bottom:1px solid #f5f5f5;position:relative;}
+.appeal-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:4px;height:4px;background:#c9a84c;border-radius:50%;}
+
+/* ── 資格数値 ── */
+.quals-nums{background:#0d1b3e;padding:48px;}
+.qng{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.2);}
+.qni{background:#0d1b3e;padding:28px 20px;text-align:center;}
+.qn2{font-family:'Cormorant Garamond',serif;font-size:36px;color:#c9a84c;font-weight:300;line-height:1;}
+.qu{font-size:13px;color:#c9a84c;}
+.ql3{font-size:11px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.7;}
+
+/* ── コア資格 ── */
+.quals-core-sec{background:#f0ede6;padding:64px 48px;}
+.quals-core{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px;}
+.qcc{background:#fff;border:1px solid #e0d9ce;padding:26px 22px;position:relative;overflow:hidden;}
+.qcc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#c9a84c;}
+.qcn{font-family:'Noto Serif JP',serif;font-size:32px;color:#ede8de;font-weight:600;position:absolute;top:10px;right:14px;line-height:1;}
+.qct{font-size:10px;color:#c9a84c;letter-spacing:2px;margin-bottom:8px;}
+.qcc h3{font-family:'Noto Serif JP',serif;font-size:13px;color:#0d1b3e;font-weight:600;margin-bottom:8px;line-height:1.9;}
+.qcc p{font-size:11px;color:#777;line-height:1.9;}
+.qscope{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;}
+.qst{font-size:10px;color:#0d1b3e;background:#f0ede6;padding:3px 8px;}
+.all-quals-box{background:#fff;border:1px solid #e0d9ce;padding:28px 32px;}
+.aqb-title{font-size:11px;color:#c9a84c;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.aqb-title::after{content:'';flex:1;height:1px;background:#e0d9ce;}
+.aqb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.aqb-tag{font-size:11px;color:#444;background:#f8f7f4;border:1px solid #e8e5de;padding:7px 12px;line-height:1.4;}
+.aqb-tag.core{color:#0d1b3e;border-left:2px solid #c9a84c;background:#fff;}
+
+/* ── 専門家ネットワーク ── */
+.network-sec{background:#0d1b3e;padding:72px 48px;}
+.nd-outer{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;margin-bottom:8px;}
+.nd-left,.nd-right{display:flex;flex-direction:column;gap:12px;}
+.nd-expert{border:1px solid rgba(255,255,255,0.12);padding:14px 16px;position:relative;}
+.nd-expert::after{content:'';position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:20px;height:1px;background:rgba(201,168,76,0.5);}
+.nd-right .nd-expert::after{left:-20px;right:auto;}
+.nd-expert-tag{font-size:9px;color:#c9a84c;letter-spacing:1px;margin-bottom:4px;}
+.nd-expert h4{font-size:12px;color:#fff;font-weight:500;margin-bottom:2px;}
+.nd-expert p{font-size:10px;color:rgba(255,255,255,0.45);line-height:1.7;}
+.nd-center-col{display:flex;align-items:center;justify-content:center;padding:0 16px;}
+.nd-center-box{background:rgba(201,168,76,0.12);border:2px solid #c9a84c;padding:24px 20px;text-align:center;width:180px;}
+.ndcl{font-size:9px;color:#c9a84c;letter-spacing:2px;margin-bottom:6px;}
+.ndcn{font-family:'Noto Serif JP',serif;font-size:15px;color:#fff;font-weight:600;margin-bottom:4px;line-height:1.5;}
+.ndcs{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.7;}
+.network-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0;}
+.nf{border:1px solid rgba(201,168,76,0.2);padding:22px;display:flex;gap:14px;}
+.nf-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:rgba(201,168,76,0.35);font-weight:300;flex-shrink:0;line-height:1;}
+.nf h4{font-size:13px;color:#fff;font-weight:500;margin-bottom:5px;}
+.nf p{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.9;}
+.onestop{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);padding:24px 28px;}
+.ost{font-size:11px;color:#c9a84c;letter-spacing:1px;margin-bottom:12px;}
+.osf{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+.oss{padding:10px 14px;background:rgba(255,255,255,0.05);font-size:12px;color:#fff;}
+.osa{padding:0 8px;color:#c9a84c;font-size:14px;}
+.osd{font-size:11px;color:rgba(255,255,255,0.5);line-height:2;margin-top:12px;}
+
+/* ── 相談事例 ── */
+.cases-sec{background:#f8f7f4;padding:64px 48px;}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.case-card{background:#fff;border:1px solid #e0ddd6;padding:24px 20px;}
+.case-num{font-size:10px;color:#c9a84c;letter-spacing:2px;margin-bottom:10px;}
+.case-card h3{font-size:13px;color:#0d1b3e;font-weight:500;margin-bottom:10px;line-height:1.7;}
+.case-card p{font-size:11px;color:#777;line-height:1.9;margin-bottom:12px;}
+.case-experts{display:flex;flex-wrap:wrap;gap:4px;}
+.ce{font-size:10px;color:#555;background:#f0ede6;border:1px solid #e0d9ce;padding:3px 8px;}
+
+/* ── AI活用 ── */
+.ai-sec{background:#fff;padding:64px 48px;}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.ai-card{border:1px solid #e8e8e8;padding:26px 22px;border-top:2px solid #c9a84c;}
+.ai-icon{width:36px;height:36px;background:#0d1b3e;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.ai-icon svg{width:18px;height:18px;fill:none;stroke:#c9a84c;stroke-width:1.5;}
+.ai-tag{font-size:10px;color:#c9a84c;letter-spacing:1px;margin-bottom:6px;}
+.ai-card h4{font-size:14px;color:#0d1b3e;font-weight:500;margin-bottom:6px;}
+.ai-card p{font-size:12px;color:#888;line-height:1.9;}
+
+/* ── グループ ── */
+.group-sec{background:#0d1b3e;padding:64px 48px;}
+.group-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(201,168,76,0.2);margin:8px 0 28px;}
+.gfs{background:#0d1b3e;padding:20px 12px;text-align:center;position:relative;}
+.gfs::after{content:'→';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:14px;}
+.gfs:last-child::after{display:none;}
+.gf-icon{width:30px;height:30px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;}
+.gf-icon svg{width:13px;height:13px;fill:none;stroke:#c9a84c;stroke-width:1.5;}
+.gfl{font-size:11px;color:#fff;font-weight:500;margin-bottom:3px;}
+.gfc{font-size:10px;color:rgba(255,255,255,0.4);}
+.group-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gc{border:1px solid rgba(201,168,76,0.2);padding:22px 18px;}
+.gctag{font-size:10px;color:#c9a84c;letter-spacing:1px;margin-bottom:6px;}
+.gc h4{font-size:13px;color:#fff;font-weight:500;margin-bottom:6px;}
+.gc p{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.8;}
+
+/* ── 空き家 ── */
+.akiya{background:#f8f7f4;padding:64px 48px;}
+.akiya-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0ddd6;margin-bottom:28px;}
+.akiya-stat{background:#f8f7f4;padding:22px;text-align:center;}
+.asn{font-family:'Noto Serif JP',serif;font-size:24px;color:#0d1b3e;font-weight:600;margin-bottom:5px;}
+.asl{font-size:10px;color:#888;letter-spacing:1px;}
+.akiya-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.akiya-card{background:#fff;border-left:2px solid #c9a84c;padding:22px 18px;}
+.akiya-card h4{font-size:13px;color:#0d1b3e;font-weight:500;margin-bottom:8px;}
+.akiya-card ul{list-style:none;}
+.akiya-card ul li{font-size:11px;color:#666;line-height:2;padding-left:12px;position:relative;}
+.akiya-card ul li::before{content:'—';position:absolute;left:0;color:#c9a84c;font-size:10px;}
+
+/* ── 秘密厳守 ── */
+.conf-sec{background:#f0ede6;padding:40px 48px;}
+.conf-inner{background:#fff;border:1px solid #e0ddd6;border-left:4px solid #c9a84c;padding:28px 36px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
+.conf-item{text-align:center;}
+.conf-icon{width:38px;height:38px;background:#0d1b3e;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;}
+.conf-icon svg{width:18px;height:18px;fill:none;stroke:#c9a84c;stroke-width:1.5;}
+.conf-item h4{font-size:13px;color:#0d1b3e;font-weight:500;margin-bottom:5px;}
+.conf-item p{font-size:11px;color:#888;line-height:1.8;}
+
+/* ── サービス ── */
+.services{background:#fff;padding:64px 48px;}
+.service-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e0e0e0;}
+.service-item{background:#fff;padding:28px 24px;}
+.stag2{font-size:10px;color:#c9a84c;letter-spacing:1px;margin-bottom:6px;}
+.service-item h3{font-family:'Noto Serif JP',serif;font-size:15px;color:#0d1b3e;margin-bottom:10px;font-weight:600;}
+.service-item ul{list-style:none;}
+.service-item ul li{font-size:12px;color:#666;line-height:2;padding-left:12px;position:relative;}
+.service-item ul li::before{content:'—';position:absolute;left:0;color:#c9a84c;}
+
+/* ── フロー ── */
+.flow{background:#f8f7f4;padding:64px 48px;}
+.flow-steps{display:grid;grid-template-columns:repeat(6,1fr);}
+.flow-step{padding:18px 10px;text-align:center;position:relative;}
+.flow-step::after{content:'›';position:absolute;right:-4px;top:22px;color:#c9a84c;font-size:16px;}
+.flow-step:last-child::after{display:none;}
+.flow-num{font-family:'Noto Serif JP',serif;font-size:18px;color:#c9a84c;font-weight:600;margin-bottom:5px;}
+.flow-step h4{font-size:11px;color:#0d1b3e;font-weight:500;margin-bottom:3px;}
+.flow-step p{font-size:10px;color:#999;line-height:1.7;}
+
+/* ── 会社概要 ── */
+.company{padding:64px 48px;background:#fff;}
+.company-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.company-info table{width:100%;border-collapse:collapse;}
+.company-info tr{border-bottom:1px solid #eeece8;}
+.company-info td{padding:10px 0;font-size:12px;vertical-align:top;}
+.company-info td:first-child{color:#999;width:90px;font-size:11px;}
+.company-profile{background:#f8f7f4;padding:22px;border-left:2px solid #c9a84c;margin-bottom:14px;}
+.company-profile p{font-size:11px;color:#555;line-height:2.1;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;}
+.ptag{font-size:11px;color:#555;border:1px solid #e0e0e0;padding:4px 10px;}
+
+/* ── CTA ── */
+.cta-section{background:#0d1b3e;padding:64px 48px;text-align:center;}
+.cta-section h2{font-family:'Noto Serif JP',serif;font-size:24px;color:#fff;margin-bottom:12px;}
+.cta-section p{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:32px;line-height:2;}
+.cta-btn{background:#c9a84c;color:#1a1a2e;font-size:13px;font-weight:500;padding:16px 40px;cursor:pointer;border:none;}
+.cta-contact{display:flex;justify-content:center;gap:48px;margin-top:36px;flex-wrap:wrap;}
+.cta-contact-item .label{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:2px;margin-bottom:5px;}
+.cta-contact-item .value{font-family:'Noto Serif JP',serif;font-size:18px;color:#c9a84c;}
+.cta-contact-item .sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:3px;}
+
+/* ── フッター ── */
+.footer{background:#0a1428;padding:26px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:16px;color:#fff;}
+.footer-logo span{color:#c9a84c;}
+.footer-info{font-size:11px;color:rgba(255,255,255,0.35);text-align:right;line-height:1.9;}
+/* ── スマホ対応CSS追加分 ── */
+@media (max-width: 768px) {
+  .lp{max-width:100%;}
+  /* ナビ */
+  .nav{padding:12px 16px;}
+  .nav-menu{display:none;}
+  .nav-btn{display:none;}
+  .nav-logo{font-size:14px;}
+  /* ヒーロー */
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-bg{width:100%;height:300px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);}
+  .hero-bg-top{width:100%;}
+  .hero-left{padding:48px 24px 40px;}
+  .hl-catch h1{font-size:28px;}
+  .hl-quals{gap:0;}
+  .hlq-text{font-size:10px;}
+  .hero-right{padding:40px 24px 48px;}
+  .hr-desc{font-size:15px;}
+  .hr-nums{grid-template-columns:1fr 1fr;}
+  .hr-tel{flex-direction:column;gap:16px;}
+  .hr-free{align-self:flex-start;}
+  /* ストリップ */
+  .strip{padding:12px 16px;flex-wrap:wrap;gap:8px;}
+  .strip-item{padding:0 12px;}
+  /* 共通セクション */
+  .concerns,.appeal,.quals-nums,.quals-core-sec,.network-sec,.cases-sec,.ai-sec,.group-sec,.akiya,.conf-sec,.services,.flow,.company,.cta-section{padding:48px 20px;}
+  .concerns-grid,.cases-grid{grid-template-columns:1fr;}
+  .appeal-grid,.quals-core,.ai-grid,.hr-nums{grid-template-columns:1fr;}
+  .qng{grid-template-columns:1fr 1fr;}
+  .aqb-grid{grid-template-columns:1fr 1fr;}
+  .nd-outer{grid-template-columns:1fr;gap:16px;}
+  .nd-expert::after,.nd-right .nd-expert::after{display:none;}
+  .nd-center-col{justify-content:flex-start;}
+  .nd-center-box{width:100%;}
+  .network-features{grid-template-columns:1fr;}
+  .osf{flex-direction:column;}
+  .osa{transform:rotate(90deg);padding:0;}
+  .group-flow{grid-template-columns:1fr;gap:1px;}
+  .gfs::after{display:none;}
+  .group-cards{grid-template-columns:1fr;}
+  .akiya-stats{grid-template-columns:1fr;}
+  .akiya-cards{grid-template-columns:1fr;}
+  .conf-inner{grid-template-columns:1fr;padding:24px 20px;}
+  .service-list{grid-template-columns:1fr;}
+  .flow-steps{grid-template-columns:repeat(3,1fr);}
+  .flow-step::after{display:none;}
+  .company-grid{grid-template-columns:1fr;}
+  .cta-contact{flex-direction:column;gap:24px;}
+  .footer{flex-direction:column;text-align:center;padding:24px 20px;}
+  .footer-info{text-align:center;}
+  /* スマホナビ */
+  .sp-nav-btn{display:flex;align-items:center;justify-content:center;background:#0d1b3e;color:#fff;font-size:11px;padding:8px 0;width:100%;text-align:center;letter-spacing:1px;border:none;cursor:pointer;}
+}
+@media (min-width:769px){.sp-nav-btn{display:none;}}
+
+/* ── お問い合わせフォーム ── */
+.contact-form-sec{background:#f0ede6;padding:72px 48px;}
+.form-wrap{background:#fff;border:1px solid #e0d9ce;padding:48px 56px;max-width:680px;margin:0 auto;}
+.form-title{font-family:'Noto Serif JP',serif;font-size:22px;color:#0d1b3e;margin-bottom:8px;font-weight:600;}
+.form-subtitle{font-size:13px;color:#888;line-height:2;margin-bottom:36px;}
+.form-group{margin-bottom:24px;}
+.form-group label{display:block;font-size:11px;color:#555;letter-spacing:1px;margin-bottom:8px;}
+.form-group label .required{color:#c9a84c;margin-left:4px;font-size:10px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid #e0ddd6;padding:12px 16px;font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#333;background:#fff;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c9a84c;}
+.form-group textarea{height:160px;resize:vertical;line-height:1.8;}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-note{font-size:11px;color:#aaa;line-height:1.8;margin-bottom:28px;padding:12px 16px;background:#f8f7f4;border-left:2px solid #e0d9ce;}
+.form-submit{background:#0d1b3e;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;padding:16px 48px;border:none;cursor:pointer;letter-spacing:2px;display:flex;align-items:center;gap:12px;margin:0 auto;}
+.form-submit-arrow{width:20px;height:1px;background:#c9a84c;position:relative;}
+.form-submit-arrow::after{content:'';position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid #c9a84c;border-right:1px solid #c9a84c;transform:rotate(45deg);}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success-icon{width:56px;height:56px;background:#0d1b3e;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+.form-success-icon svg{width:24px;height:24px;fill:none;stroke:#c9a84c;stroke-width:2;}
+.form-success h3{font-family:'Noto Serif JP',serif;font-size:18px;color:#0d1b3e;margin-bottom:8px;}
+.form-success p{font-size:13px;color:#888;line-height:2;}
+@media(max-width:768px){
+  .contact-form-sec{padding:48px 20px;}
+  .form-wrap{padding:32px 24px;}
+  .form-row{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+<body>
+<div class="lp">
+
+<!-- ナビ -->
+<nav class="nav">
+  <div class="nav-logo">IK<span>Design</span></div>
+  <div class="nav-menu">
+    <a href="#service">サービス</a>
+    <a href="#qualification">資格・強み</a>
+    <a href="#network">専門家連携</a>
+    <a href="#akiya">空き家相談</a>
+    <a href="#company">会社概要</a>
+  </div>
+  <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談</button>
+</nav>
+<div class="sp-nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談（無料・秘密厳守）</div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-top"></div>
+  <div class="hero-left">
+    <div class="hl-logo">IK<span>Design</span> 株式会社 / REAL ESTATE CONSULTING</div>
+    <div class="hl-catch">
+      <div class="hl-tag"><div class="hl-tag-line"></div><div class="hl-tag-text">不動産コンサルティング</div></div>
+      <h1>相続、売却、空き家<span class="sep">——</span><br>すべての窓口を、<br><em>ひとつにする。</em></h1>
+      <div class="hl-en">One Stop Real Estate Consulting</div>
+    </div>
+    <div class="hl-quals">
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">公認不動産コンサルティングマスター</div></div>
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">公認不動産コンサルティングマスター 相続対策専門士</div></div>
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">公認不動産コンサルティングマスター エバリュエーション対策専門士</div></div>
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">空き家・空き地コンサルティングエキスパート</div></div>
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">宅地建物取引士 ／ 任意売却取扱主任者 ／ 競売不動産取扱主任者</div></div>
+      <div class="hlq"><div class="hlq-line"></div><div class="hlq-text">空き家相談士 ／ 住宅ローンアドバイザー ／ 遺品整理士</div></div>
+    </div>
+    <button class="hl-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談を予約する<div class="hl-btn-arrow"></div></button>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="hr-label">WHY IKDESIGN</div>
+      <div class="hr-desc">不動産専門資格者と<br>7士業が、課題を解決する。</div>
+      <div class="hr-body">税理士・弁護士・司法書士・不動産鑑定士・土地家屋調査士・建築士・FPとのネットワークで、複雑な不動産課題をワンストップで解決します。初回相談は完全無料・秘密厳守。</div>
+    </div>
+    <div class="hr-nums">
+      <div class="hrn-item"><div class="hrn-en">QUALIFICATIONS</div><div><span class="hrn-n">10</span><span class="hrn-u">+</span></div><div class="hrn-l">IKDesign保有<br>専門資格数</div></div>
+      <div class="hrn-item"><div class="hrn-en">EXPERT NETWORK</div><div><span class="hrn-n">7</span><span class="hrn-u">士業</span></div><div class="hrn-l">連携する外部<br>専門家ネットワーク</div></div>
+      <div class="hrn-item"><div class="hrn-en">SERVICE AREA</div><div><span class="hrn-n" style="font-size:28px;">全国</span></div><div class="hrn-l">空き家・空き地<br>コンサル対応</div></div>
+      <div class="hrn-item"><div class="hrn-en">CONSULTATION</div><div><span class="hrn-n" style="font-size:28px;">無料</span></div><div class="hrn-l">初回相談<br>完全無料・秘密厳守</div></div>
+    </div>
+    <div class="hr-tel">
+      <div><div class="hr-tel-label">TEL</div><div class="hr-tel-num">0495-23-3555</div><div class="hr-tel-sub">受付 9:00〜18:00（土日祝除く）</div></div>
+      <button class="hr-free" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談フォームへ</button>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">秘密厳守</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">初回相談 完全無料</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">全国対応（空き家・空き地）</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">7士業の専門家ネットワーク</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">AI活用 最先端コンサル</div></div>
+</div>
+
+<!-- お悩み -->
+<div class="concerns">
+  <div class="sl">YOUR CONCERNS</div>
+  <div class="st">こんなお悩みはありませんか？</div>
+  <p class="sd">IKDesignには、このようなご相談が多く寄せられています。どんな小さなお悩みでも、まずはお気軽にご相談ください。</p>
+  <div class="concerns-grid">
+    <div class="concern-card"><div class="concern-q">CONCERN 01</div><h3>空室の多くなった賃貸住宅を何とかしたい</h3><p>売却・賃貸戦略の見直し・リノベーションなど、状況に応じた最適解をご提案します。</p></div>
+    <div class="concern-card"><div class="concern-q">CONCERN 02</div><h3>売却と賃貸どちらが良いのか？</h3><p>エバリュエーション専門士として市場価値を正確に評価し、税務面も含めた最適な選択肢をご提示します。</p></div>
+    <div class="concern-card"><div class="concern-q">CONCERN 03</div><h3>相続税が払えるか心配。納税資金をどうするか？</h3><p>相続対策専門士として、税理士と連携しながら納税資金対策・節税プランを立案します。</p></div>
+    <div class="concern-card"><div class="concern-q">CONCERN 04</div><h3>相続したアパートは売却すべきか？修繕すべきか？</h3><p>収益性・資産価値・税務を総合的に分析し、長期的視点での最適な判断をサポートします。</p></div>
+    <div class="concern-card"><div class="concern-q">CONCERN 05</div><h3>借地人との関係が悪く貸地の管理が面倒</h3><p>弁護士・司法書士と連携し、法的手続きから交渉・権利整理まで一貫してサポートします。</p></div>
+    <div class="concern-card"><div class="concern-q">CONCERN 06</div><h3>相続税対策のため収益不動産を検討しているが実際どうなのか？</h3><p>不動産投資のリスク・収益性・税務効果を専門家チームが多角的に分析してご提案します。</p></div>
+  </div>
+</div>
+
+<!-- 選ばれる理由 -->
+<div id="service" class="appeal">
+  <div class="sl">WHY CHOOSE IKDESIGN</div>
+  <div class="st">IKDesignが選ばれる4つの理由</div>
+  <div class="appeal-grid">
+    <div class="appeal-card">
+      <div class="appeal-bg-num">01</div>
+      <div class="appeal-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="appeal-tag">QUALIFICATION</div>
+      <h3>圧倒的な専門資格数</h3>
+      <p>公認不動産コンサルティングマスターをはじめ、相続・評価・空き家・任意売却・競売など10以上の専門資格を保有。</p>
+      <ul class="appeal-list">
+        <li>公認不動産コンサルティングマスター</li>
+        <li>相続対策専門士・エバリュエーション専門士</li>
+        <li>空き家・空き地コンサルティングエキスパート</li>
+        <li>宅建士・競売・任意売却・空き家相談士ほか</li>
+      </ul>
+    </div>
+    <div class="appeal-card navy">
+      <div class="appeal-bg-num">02</div>
+      <div class="appeal-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="appeal-tag">EXPERT NETWORK</div>
+      <h3>7士業との専門家連携</h3>
+      <p>税理士・弁護士・司法書士・不動産鑑定士・土地家屋調査士・建築士・FPとのネットワークで複雑な課題も解決。</p>
+      <ul class="appeal-list">
+        <li>窓口はIKDesignひとつ、専門家を一括コーディネート</li>
+        <li>不動産×法務×税務を統合した最適解を提案</li>
+        <li>費用の事前説明で安心して依頼できる</li>
+      </ul>
+    </div>
+    <div class="appeal-card">
+      <div class="appeal-bg-num">03</div>
+      <div class="appeal-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="appeal-tag">AI × CONSULTING</div>
+      <h3>AI活用による最先端コンサル</h3>
+      <p>最新AI技術を不動産コンサルに活用。書類作成・市場分析・相続シミュレーションを高速・高精度で提供。</p>
+      <ul class="appeal-list">
+        <li>登記・公図からの自動書類生成</li>
+        <li>AIによる市場分析・適正価格査定</li>
+        <li>相続税シミュレーションの迅速対応</li>
+      </ul>
+    </div>
+    <div class="appeal-card navy">
+      <div class="appeal-bg-num">04</div>
+      <div class="appeal-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div class="appeal-tag">CONFIDENTIAL &amp; FREE</div>
+      <h3>秘密厳守・完全無料相談</h3>
+      <p>相続・資産に関するデリケートな内容も完全秘密厳守。初回相談は完全無料、全国対応です。</p>
+      <ul class="appeal-list">
+        <li>初回相談は完全無料・秘密厳守</li>
+        <li>電話・メール・Web・来店すべて対応</li>
+        <li>全国の空き家・空き地コンサルに対応</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 資格数値 -->
+<div id="qualification" class="quals-nums">
+  <div class="sl">QUALIFICATION NUMBERS</div>
+  <div class="stw">数字で見る、IKDesignの専門資格力</div>
+  <div class="qng">
+    <div class="qni"><div class="qn2">10<span class="qu">+</span></div><div class="ql3">IKDesign保有<br>専門資格数</div></div>
+    <div class="qni"><div class="qn2">7<span class="qu">士業</span></div><div class="ql3">連携する外部<br>専門家ネットワーク</div></div>
+    <div class="qni"><div class="qn2">3<span class="qu">社</span></div><div class="ql3">グループ連携会社</div></div>
+    <div class="qni"><div class="qn2" style="font-size:28px;">全国</div><div class="ql3">空き家・空き地<br>コンサル対応エリア</div></div>
+  </div>
+</div>
+
+<!-- コア資格 -->
+<div class="quals-core-sec">
+  <div class="sl">CORE QUALIFICATIONS</div>
+  <div class="st">IKDesignの保有資格一覧</div>
+  <p class="sd">公認不動産コンサルティングマスターを中心に、相続・評価・空き家・売買・任意売却・競売まで、不動産のあらゆる専門領域をカバーする資格を保有しています。</p>
+  <div class="quals-core">
+    <div class="qcc"><div class="qcn">01</div><div class="qct">CORE QUALIFICATION</div><h3>公認 不動産コンサルティングマスター</h3><p>国土交通大臣登録の最高位不動産資格。売買・賃貸・有効活用・投資・相続・事業承継・M&Aまで幅広い知識を持つ不動産のプロフェッショナル。</p><div class="qscope"><span class="qst">売買</span><span class="qst">投資</span><span class="qst">有効活用</span><span class="qst">事業承継</span><span class="qst">M&A</span></div></div>
+    <div class="qcc"><div class="qcn">02</div><div class="qct">INHERITANCE</div><h3>公認 不動産コンサルティングマスター 相続対策専門士</h3><p>相続税対策・遺産分割・納税資金対策の3本柱を軸に、税理士・司法書士と連携した円滑な相続を実現する専門資格。</p><div class="qscope"><span class="qst">相続税対策</span><span class="qst">遺産分割</span><span class="qst">納税資金</span><span class="qst">家族信託</span></div></div>
+    <div class="qcc"><div class="qcn">03</div><div class="qct">EVALUATION</div><h3>公認 不動産コンサルティングマスター エバリュエーション対策専門士</h3><p>不動産の適正評価・価値算定に特化した専門資格。売却・相続・融資・税務申告など各シーンで正確な不動産評価を実施。</p><div class="qscope"><span class="qst">価値算定</span><span class="qst">売却査定</span><span class="qst">相続評価</span><span class="qst">融資対応</span></div></div>
+    <div class="qcc"><div class="qcn">04</div><div class="qct">AKIYA EXPERT</div><h3>空き家・空き地コンサルティングエキスパート</h3><p>全国の空き家・空き地問題に特化した専門資格。活用・売却・管理・解体まで総合サポート。グループ施工力との連携が強み。</p><div class="qscope"><span class="qst">空き家管理</span><span class="qst">売却支援</span><span class="qst">特定空き家対策</span><span class="qst">全国対応</span></div></div>
+  </div>
+  <div class="all-quals-box">
+    <div class="aqb-title">IKDesign 全保有資格・認定</div>
+    <div class="aqb-grid">
+      <div class="aqb-tag core">公認 不動産コンサルティングマスター</div>
+      <div class="aqb-tag core">相続対策専門士</div>
+      <div class="aqb-tag core">エバリュエーション対策専門士</div>
+      <div class="aqb-tag core">空き家・空き地コンサルティングエキスパート</div>
+      <div class="aqb-tag">宅地建物取引士</div>
+      <div class="aqb-tag">賃貸不動産経営管理士</div>
+      <div class="aqb-tag">任意売却取扱主任者</div>
+      <div class="aqb-tag">競売不動産取扱主任者</div>
+      <div class="aqb-tag">住宅ローンアドバイザー</div>
+      <div class="aqb-tag">遺品整理士</div>
+      <div class="aqb-tag">空き家相談士</div>
+    </div>
+  </div>
+</div>
+
+<!-- 専門家ネットワーク -->
+<div id="network" class="network-sec">
+  <div class="sl">EXPERT PROFESSIONAL NETWORK</div>
+  <div class="stw">7つの専門士業との連携で、<br>どんな課題も解決する。</div>
+  <p class="sdw" style="margin-bottom:40px;">ご相談者様がご自身で各専門家と個別に協議し、不動産の悩みを解決することは容易ではありません。IKDesignは公認不動産コンサルティングマスターとして、各専門士業とのネットワーク・技術を活用し、公正かつ客観的な立場からお客様が最善の判断ができるように企画・調整・ご提案いたします。</p>
+  <div style="margin-bottom:40px;">
+    <div class="nd-outer">
+      <div class="nd-left">
+        <div class="nd-expert"><div class="nd-expert-tag">TAX</div><h4>税理士・公認会計士</h4><p>相続税申告・節税対策・法人税務・資産組換えの税務面をサポート</p></div>
+        <div class="nd-expert"><div class="nd-expert-tag">LEGAL</div><h4>司法書士・行政書士</h4><p>相続登記・遺言書作成・法人設立・各種権利手続きをサポート</p></div>
+        <div class="nd-expert"><div class="nd-expert-tag">ATTORNEY</div><h4>弁護士</h4><p>遺産分割紛争・不動産トラブル・境界問題・任意売却の法的解決</p></div>
+        <div class="nd-expert"><div class="nd-expert-tag">FP</div><h4>ファイナンシャルプランナー</h4><p>ライフプラン・納税資金・老後資産設計を不動産戦略と連動</p></div>
+      </div>
+      <div class="nd-center-col">
+        <div class="nd-center-box"><div class="ndcl">COORDINATOR</div><div class="ndcn">IKDesign<br>不動産<br>コンサルティング</div><div class="ndcs">公認不動産<br>コンサルティングマスター<br>窓口ひとつで<br>全専門家と連携</div></div>
+      </div>
+      <div class="nd-right">
+        <div class="nd-expert" style="text-align:right;"><div class="nd-expert-tag">SURVEY</div><h4>土地家屋調査士</h4><p>土地の測量・境界確定・分筆・合筆など不動産の物理的調査</p></div>
+        <div class="nd-expert" style="text-align:right;"><div class="nd-expert-tag">APPRAISAL</div><h4>不動産鑑定士</h4><p>不動産の公正な価値評価・鑑定評価書の作成・裁判所向け評価</p></div>
+        <div class="nd-expert" style="text-align:right;"><div class="nd-expert-tag">ARCHITECT</div><h4>建築士</h4><p>建物の設計・リノベーション・建物価値向上のための建築企画</p></div>
+        <div class="nd-expert" style="text-align:right;"><div class="nd-expert-tag">GROUP</div><h4>グループ各社</h4><p>ネクストステージ（売買）・関東メンテックス（施工）・マモリエ・アキカエ</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="network-features">
+    <div class="nf"><div class="nf-num">01</div><div><h4>窓口はIKDesignひとつ</h4><p>お客様が各専門士業を個別に探す必要はありません。IKDesignへのご相談ひとつで、課題に応じた最適な専門家をコーディネートします。</p></div></div>
+    <div class="nf"><div class="nf-num">02</div><div><h4>不動産×専門士業で最適解</h4><p>公認不動産コンサルティングマスターが不動産の観点で課題を整理した上で専門士業に引き継ぐため、より精度の高い提案が可能です。</p></div></div>
+    <div class="nf"><div class="nf-num">03</div><div><h4>複雑案件も一貫サポート</h4><p>相続×税務×登記×建物評価のように複数の専門領域が絡む複雑な案件でも、IKDesignが全体を俯瞰しながら調整します。</p></div></div>
+    <div class="nf"><div class="nf-num">04</div><div><h4>費用の透明性・安心感</h4><p>各専門士業への依頼前に概算費用と手続きの流れを事前にご説明。「いくらかかるかわからない」という不安を解消します。</p></div></div>
+  </div>
+  <div class="onestop">
+    <div class="ost">IKDesignを窓口にしたワンストップの流れ</div>
+    <div class="osf">
+      <div class="oss">お客様のご相談</div><div class="osa">→</div>
+      <div class="oss">IKDesignが課題整理</div><div class="osa">→</div>
+      <div class="oss">最適専門家をコーディネート</div><div class="osa">→</div>
+      <div class="oss">連携チームで解決</div><div class="osa">→</div>
+      <div class="oss">課題完全解決</div>
+    </div>
+    <p class="osd">税理士・司法書士・弁護士・不動産鑑定士・土地家屋調査士・建築士・FPなど、必要な専門家はIKDesignが最適な方をご紹介。お客様は複数の専門家を探す手間なく、信頼できるチームによるサポートをお受けいただけます。</p>
+  </div>
+</div>
+
+<!-- 相談事例 -->
+<div class="cases-sec">
+  <div class="sl">CONSULTATION CASES</div>
+  <div class="st">相談シーン別の専門家チーム</div>
+  <p class="sd">どんな課題でも、IKDesignが最適な専門家チームを組成します。</p>
+  <div class="cases-grid">
+    <div class="case-card"><div class="case-num">CASE 01</div><h3>親の不動産を相続した。税金・手続き・売却をどうすれば？</h3><p>相続評価・納税・登記・売却など複数の手続きが絡む相続案件を専門家チームで一括対応。</p><div class="case-experts"><span class="ce">IKDesign（相続コンサル）</span><span class="ce">税理士（相続税）</span><span class="ce">司法書士（登記）</span><span class="ce">ネクストステージ（売却）</span></div></div>
+    <div class="case-card"><div class="case-num">CASE 02</div><h3>遺産分割で兄弟と揉めそう。公平な不動産評価が必要</h3><p>不動産鑑定士との連携で公正な評価を実施。争いが生じた場合は弁護士と連携して解決。</p><div class="case-experts"><span class="ce">IKDesign（調整）</span><span class="ce">不動産鑑定士（評価）</span><span class="ce">弁護士（法的解決）</span><span class="ce">司法書士（協議書）</span></div></div>
+    <div class="case-card"><div class="case-num">CASE 03</div><h3>土地の境界が不明確で売却が進まない</h3><p>土地家屋調査士と連携して境界確定・測量を実施。売却可能な状態に整えてから売却を進めます。</p><div class="case-experts"><span class="ce">IKDesign（売却戦略）</span><span class="ce">土地家屋調査士（測量）</span><span class="ce">司法書士（登記）</span><span class="ce">ネクストステージ（売却）</span></div></div>
+    <div class="case-card"><div class="case-num">CASE 04</div><h3>老朽化した建物を活用・売却したい</h3><p>建築士と連携してリノベーション費用・建物価値を算出。売却か活用かの最適判断をサポート。</p><div class="case-experts"><span class="ce">IKDesign（活用戦略）</span><span class="ce">建築士（建物評価）</span><span class="ce">不動産鑑定士（査定）</span><span class="ce">関東メンテックス（施工）</span></div></div>
+    <div class="case-card"><div class="case-num">CASE 05</div><h3>老後の生活を見据えた不動産の組換えを考えたい</h3><p>FPとのライフプラン設計と不動産戦略を組み合わせ、老後資金・納税資金を含めた最適提案。</p><div class="case-experts"><span class="ce">IKDesign（不動産戦略）</span><span class="ce">FP（ライフプラン）</span><span class="ce">税理士（税務）</span><span class="ce">ネクストステージ（売却）</span></div></div>
+    <div class="case-card"><div class="case-num">CASE 06</div><h3>遠方に空き家がある。管理も売却もどこに頼めばいい？</h3><p>空き家の現状調査から管理・売却・解体まで、グループと専門家ネットワークで全国一貫対応。</p><div class="case-experts"><span class="ce">IKDesign（空き家コンサル）</span><span class="ce">マモリエ（定期管理）</span><span class="ce">アキカエ（現状買取）</span><span class="ce">行政書士（手続き）</span></div></div>
+  </div>
+</div>
+
+<!-- AI活用 -->
+<div class="ai-sec">
+  <div class="sl">AI × REAL ESTATE</div>
+  <div class="st">AI活用による最先端コンサルティング</div>
+  <p class="sd">最新AI技術を不動産コンサルに積極活用。スピードと精度を高め、お客様への迅速・正確なサービスを提供します。</p>
+  <div class="ai-grid">
+    <div class="ai-card"><div class="ai-tag">DOCUMENT AI</div><div class="ai-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4>書類作成の高速化・精度向上</h4><p>不動産概要書・査定書・報告書をAIで自動生成。登記情報・公図・案内図を読み込みプロ品質の書類を短時間で作成します。</p></div>
+    <div class="ai-card"><div class="ai-tag">MARKET ANALYSIS</div><div class="ai-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4>AIによる市場分析・価格査定</h4><p>周辺相場・成約事例・法令情報をAIが多角分析。エバリュエーション専門士の知見と組み合わせ、より精度の高い価格査定を提供します。</p></div>
+    <div class="ai-card"><div class="ai-tag">SIMULATION</div><div class="ai-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h4>相続シミュレーションの迅速対応</h4><p>相続税評価・小規模宅地特例・遺産分割のシミュレーションをAI支援で迅速実施。初回相談から具体的な数字でご提案します。</p></div>
+    <div class="ai-card"><div class="ai-tag">AKIYA SOLUTION</div><div class="ai-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h4>空き家・空き地の最適活用提案</h4><p>全国の空き家データ・地価情報・法令制限をAIで分析し、売却・賃貸・活用の最適解を提示。遠方物件も効率的に対応できます。</p></div>
+  </div>
+</div>
+
+<!-- グループ -->
+<div class="group-sec">
+  <div class="sl">GROUP ONE STOP</div>
+  <div class="stw">グループ一貫対応で、相談から解決まで窓口ひとつ</div>
+  <p class="sdw">IKDesignへのご相談ひとつで、売却・施工・管理・買取まで、グループ各社が連携して動きます。</p>
+  <div class="group-flow">
+    <div class="gfs"><div class="gf-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="gfl">ご相談</div><div class="gfc">IKDesign</div></div>
+    <div class="gfs"><div class="gf-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="gfl">調査・査定</div><div class="gfc">IKDesign+NS</div></div>
+    <div class="gfs"><div class="gf-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="gfl">施工・管理</div><div class="gfc">関東メンテックス</div></div>
+    <div class="gfs"><div class="gf-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="gfl">売却・買取</div><div class="gfc">NS/アキカエ</div></div>
+    <div class="gfs"><div class="gf-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="gfl">課題解決</div><div class="gfc">ワンストップ</div></div>
+  </div>
+  <div class="group-cards">
+    <div class="gc"><div class="gctag">7 PROFESSIONALS</div><h4>7士業との専門家連携</h4><p>税理士・弁護士・司法書士・不動産鑑定士・土地家屋調査士・建築士・FPがチームで動きます。</p></div>
+    <div class="gc"><div class="gctag">NATIONWIDE</div><h4>全国対応</h4><p>空き家・空き地コンサルは全国対応。遠方にある実家の空き家も現地調査から活用・売却まで一貫サポート。</p></div>
+    <div class="gc"><div class="gctag">FREE &amp; CONFIDENTIAL</div><h4>完全無料・秘密厳守</h4><p>初回相談は完全無料。相続・資産に関するデリケートな内容も秘密厳守でお受けします。</p></div>
+  </div>
+</div>
+
+<!-- 空き家 -->
+<div id="akiya" class="akiya">
+  <div class="sl">AKIYA / AKICHI</div>
+  <div class="st">空き家・空き地のこと、<br>お任せください。</div>
+  <p class="sd">所有している空き家や空き地をそのまま放置しているなら、そろそろ活用や売却を検討してはいかがでしょうか。空き家を放置すると、所有者にも多くのリスクがもたらされます。</p>
+  <div class="akiya-stats">
+    <div class="akiya-stat"><div class="asn">900万戸</div><div class="asl">全国空き家数（総務省）</div></div>
+    <div class="akiya-stat"><div class="asn">13.8%</div><div class="asl">空き家率（過去最高水準）</div></div>
+    <div class="akiya-stat"><div class="asn">全国対応</div><div class="asl">空き家・空き地コンサル</div></div>
+  </div>
+  <div class="akiya-cards">
+    <div class="akiya-card"><h4>売　却</h4><ul><li>仲介・現状売却・買取の提案</li><li>解体後更地での売却も対応</li><li>相続空き家の特例活用</li><li>アキカエ（現状買取）連携</li></ul></div>
+    <div class="akiya-card"><h4>賃　貸</h4><ul><li>空き家を賃貸物件として整備</li><li>リノベーション・リフォーム提案</li><li>入居者募集・賃貸管理</li><li>駐車場・太陽光など土地活用</li></ul></div>
+    <div class="akiya-card"><h4>管理維持</h4><ul><li>特定空き家指定の回避対策</li><li>マモリエ連携による定期管理</li><li>換気・水道・建物点検</li><li>遠方オーナーの代理対応</li></ul></div>
+  </div>
+</div>
+
+<!-- 秘密厳守 -->
+<div class="conf-sec">
+  <div class="conf-inner">
+    <div class="conf-item"><div class="conf-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h4>秘密厳守</h4><p>相続・資産に関するデリケートな内容も完全秘密厳守。</p></div>
+    <div class="conf-item"><div class="conf-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>完全無料相談</h4><p>初回相談は完全無料。費用が発生するのはご契約後からです。</p></div>
+    <div class="conf-item"><div class="conf-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h4>全国対応</h4><p>空き家・空き地コンサルは全国どこでも対応いたします。</p></div>
+  </div>
+</div>
+
+<!-- サービス -->
+<div class="services">
+  <div class="sl">SERVICE</div>
+  <div class="st">専門資格を活かしたサービス</div>
+  <div class="service-list">
+    <div class="service-item"><div class="stag2">相続対策専門士 × 税理士・司法書士連携</div><h3>不動産相続サポート</h3><ul><li>相続不動産コンサルティング</li><li>相続手続きワンストップサービス</li><li>遺産分割協議書作成サポート</li><li>小規模宅地等の特例活用</li><li>相続税評価額の圧縮提案</li></ul></div>
+    <div class="service-item"><div class="stag2">エバリュエーション専門士 × 不動産鑑定士連携</div><h3>不動産売却・活用支援</h3><ul><li>適正価格での不動産評価・査定</li><li>売却戦略の立案・交渉</li><li>測量・境界査定（土地家屋調査士連携）</li><li>土地活用・開発コンサル</li><li>任意売却・競売物件の対応</li></ul></div>
+    <div class="service-item"><div class="stag2">空き家エキスパート × グループ施工力</div><h3>空き家・空き地専門コンサル</h3><ul><li>全国対応の空き家コンサルティング</li><li>特定空き家指定回避対策</li><li>空き地・遊休地の収益化</li><li>遠方オーナーの代理管理</li><li>解体・更地化から売却まで</li></ul></div>
+    <div class="service-item"><div class="stag2">コンサルティングマスター × AI活用</div><h3>経営・資産コンサルティング</h3><ul><li>所有土地の有効活用提案</li><li>投資物件・投資情報の提供</li><li>事業承継・M&Aアドバイザリー</li><li>貸家・貸地・賃貸経営のアドバイス</li><li>建物の付加価値提案・建築企画</li></ul></div>
+  </div>
+</div>
+
+<!-- フロー -->
+<div class="flow">
+  <div class="sl">FLOW</div>
+  <div class="st">ご相談の流れ</div>
+  <div class="flow-steps">
+    <div class="flow-step"><div class="flow-num">01</div><h4>お問い合わせ</h4><p>電話・メール・フォーム</p></div>
+    <div class="flow-step"><div class="flow-num">02</div><h4>無料相談</h4><p>来店・Web・電話</p></div>
+    <div class="flow-step"><div class="flow-num">03</div><h4>調査・評価</h4><p>現地調査・査定</p></div>
+    <div class="flow-step"><div class="flow-num">04</div><h4>プラン提案</h4><p>費用もご提示</p></div>
+    <div class="flow-step"><div class="flow-num">05</div><h4>ご契約</h4><p>方針打ち合わせ</p></div>
+    <div class="flow-step"><div class="flow-num">06</div><h4>サポート開始</h4><p>定期的に打合せ</p></div>
+  </div>
+</div>
+
+<!-- 会社概要 -->
+<div id="company" class="company">
+  <div class="sl">COMPANY</div>
+  <div class="st">会社概要</div>
+  <div class="company-grid">
+    <div class="company-info">
+      <table>
+        <tr><td>会社名</td><td>IKDesign 株式会社</td></tr>
+        <tr><td>設立</td><td>2018年3月</td></tr>
+        <tr><td>資本金</td><td>300万円</td></tr>
+        <tr><td>代表者</td><td>今井 喜彦</td></tr>
+        <tr><td>所在地</td><td>〒150-0001 東京都渋谷区神宮前3-24-1<br>原宿鈴木ビル3階</td></tr>
+        <tr><td>TEL</td><td>0495-23-3555</td></tr>
+        <tr><td>FAX</td><td>0495-23-4336</td></tr>
+        <tr><td>e-mail</td><td>info@ikd-kk.com</td></tr>
+        <tr><td>URL</td><td>https://ikd-kk.com</td></tr>
+        <tr><td>事業内容</td><td>不動産コンサルティング・経営コンサルティング</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="company-profile">
+        <p>公認 不動産コンサルティングマスター<br>公認 不動産コンサルティングマスター 相続対策専門士<br>公認 不動産コンサルティングマスター エバリュエーション対策専門士<br>空き家・空き地コンサルティングエキスパート<br>宅地建物取引士 ／ 賃貸不動産経営管理士<br>任意売却取扱主任者 ／ 競売不動産取扱主任者<br>住宅ローンアドバイザー ／ 遺品整理士 ／ 空き家相談士</p>
+      </div>
+      <div style="font-size:11px;color:#999;letter-spacing:1px;margin-bottom:10px;">PARTNER COMPANIES &amp; SERVICES</div>
+      <div class="ptags">
+        <span class="ptag">株式会社ネクストステージ</span>
+        <span class="ptag">関東メンテックス株式会社</span>
+        <span class="ptag">マモリエ</span>
+        <span class="ptag">アキカエ</span>
+        <span class="ptag">リユースマーケット</span>
+        <span class="ptag">リースバック</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- お問い合わせフォーム -->
+<div id="contact" class="contact-form-sec">
+  <div class="sl">CONTACT</div>
+  <div class="st" style="text-align:center;margin-bottom:8px;">無料相談・お問い合わせ</div>
+  <p class="sd" style="text-align:center;max-width:100%;margin-bottom:36px;">初回相談は完全無料・秘密厳守です。どんな小さなお悩みでもお気軽にご相談ください。</p>
+  <div class="form-wrap">
+    <div id="form-content">
+      <div class="form-title">無料相談フォーム</div>
+      <div class="form-subtitle">ご入力いただいた内容は厳重に管理し、相談対応以外には使用いたしません。<br>通常2営業日以内にご連絡いたします。</div>
+      <form id="contact-form" netlify name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前<span class="required">必須</span></label>
+            <input type="text" name="name" placeholder="例：今井 喜彦" required>
+          </div>
+          <div class="form-group">
+            <label>フリガナ</label>
+            <input type="text" name="kana" placeholder="例：イマイ ヨシヒコ">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>メールアドレス<span class="required">必須</span></label>
+            <input type="email" name="email" placeholder="例：info@ikd-kk.com" required>
+          </div>
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" name="tel" placeholder="例：0495-23-3555">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>お住まいの都道府県<span class="required">必須</span></label>
+          <select name="prefecture" required>
+            <option value="">選択してください</option>
+            <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ご相談内容<span class="required">必須</span></label>
+          <select name="category" required>
+            <option value="">選択してください</option>
+            <option>不動産の相続・相続対策</option>
+            <option>不動産の売却</option>
+            <option>空き家・空き地の管理・活用・売却</option>
+            <option>不動産の有効活用・土地活用</option>
+            <option>不動産投資</option>
+            <option>任意売却</option>
+            <option>競売不動産</option>
+            <option>賃貸経営のアドバイス</option>
+            <option>事業承継・M&A</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>物件の所在地（わかる範囲で）</label>
+          <input type="text" name="property_location" placeholder="例：埼玉県本庄市 / 不明">
+        </div>
+        <div class="form-group">
+          <label>ご相談の詳細<span class="required">必須</span></label>
+          <textarea name="message" placeholder="ご相談内容をできるだけ詳しくお聞かせください。&#10;例：親から相続した土地があり、売却か活用か迷っています。&#10;相続税の申告期限まで8ヶ月あります。" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>ご希望の連絡方法</label>
+          <select name="contact_method">
+            <option>メールで連絡希望</option>
+            <option>電話で連絡希望</option>
+            <option>どちらでも可</option>
+          </select>
+        </div>
+        <div class="form-note">
+          ・入力いただいた個人情報は、ご相談への返答のみに使用いたします。<br>
+          ・秘密厳守を徹底しております。第三者への提供は一切いたしません。<br>
+          ・通常2営業日以内にご連絡いたします。
+        </div>
+        <button type="submit" class="form-submit">
+          無料相談を申し込む
+          <div class="form-submit-arrow"></div>
+        </button>
+      </form>
+    </div>
+    <div class="form-success" id="form-success">
+      <div class="form-success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>送信完了しました</h3>
+      <p>お問い合わせありがとうございます。<br>通常2営業日以内にご連絡いたします。<br>しばらくお待ちください。</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px;">
+    <p style="font-size:12px;color:#888;margin-bottom:8px;">お電話でのご相談はこちら</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#0d1b3e;">0495-23-3555</p>
+    <p style="font-size:11px;color:#aaa;margin-top:4px;">受付時間 9:00〜18:00（土日祝除く）</p>
+  </div>
+</div>
+
+<!-- フッター -->
+<div class="footer">
+  <div class="footer-logo">IK<span>Design</span> 株式会社</div>
+  <div class="footer-info">〒150-0001 東京都渋谷区神宮前3-24-1　原宿鈴木ビル3階<br>関東メンテックスグループ　© 2018 IKDesign Co., Ltd.</div>
+</div>
+
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contact-form');
+  const data = new FormData(form);
+  
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    window.scrollTo({top: document.getElementById('contact').offsetTop, behavior: 'smooth'});
+  })
+  .catch(() => {
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
