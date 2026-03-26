@@ -442,7 +442,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;background:#fff;}
       <div class="hrn-item"><div class="hrn-en">CONSULTATION</div><div><span class="hrn-n" style="font-size:28px;">無料</span></div><div class="hrn-l">初回相談<br>完全無料・秘密厳守</div></div>
     </div>
     <div class="hr-tel">
-      <div><div class="hr-tel-label">TEL</div><div class="hr-tel-num">0495-23-3555</div><div class="hr-tel-sub">受付 9:00〜18:00（土日祝除く）</div></div>
+      <div><div class="hr-tel-label">TEL</div><a href="tel:0495-23-3555" class="hr-tel-num" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'hero'});" style="text-decoration:none;color:#0d1b3e;">0495-23-3555</a><div class="hr-tel-sub">受付 9:00〜18:00（土日祝除く）</div></div>
       <button class="hr-free" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">無料相談フォームへ</button>
     </div>
   </div>
@@ -836,7 +836,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;background:#fff;}
   </div>
   <div style="text-align:center;margin-top:32px;">
     <p style="font-size:12px;color:#888;margin-bottom:8px;">お電話でのご相談はこちら</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#0d1b3e;">0495-23-3555</p>
+    <a href="tel:0495-23-3555" style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#0d1b3e;text-decoration:none;" onclick="gtag('event','phone_click',{event_category:'contact',event_label:'cta'});">0495-23-3555</a>
     <p style="font-size:11px;color:#aaa;margin-top:4px;">受付時間 9:00〜18:00（土日祝除く）</p>
   </div>
 </div>
@@ -861,6 +861,7 @@ function handleSubmit(e) {
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
+    gtag('event','form_submit',{event_category:'contact',event_label:'consultation_form'});
     document.getElementById('form-content').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
     window.scrollTo({top: document.getElementById('contact').offsetTop, behavior: 'smooth'});
