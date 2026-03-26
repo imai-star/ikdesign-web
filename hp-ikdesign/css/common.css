@@ -10,6 +10,7 @@
   --f-serif:'Noto Serif JP',serif;
   --f-sans:'Noto Sans JP',sans-serif;
   --f-en:'Cormorant Garamond',serif;
+  --f-brush:'Zen Antique',serif;
   --max-w:1100px;
   --section-py:100px;
   --section-px:64px;
@@ -22,7 +23,7 @@ body{font-family:var(--f-sans);color:var(--c-text);background:var(--c-bg);font-w
 .header-logo{display:flex;align-items:center;}
 .header-logo img{height:40px;width:auto;}
 .header-nav{display:flex;gap:32px;align-items:center;}
-.header-nav a{font-size:12px;letter-spacing:1.5px;color:var(--c-text-sub);transition:color .2s;position:relative;}
+.header-nav a{font-family:var(--f-serif);font-size:13px;font-weight:300;letter-spacing:2px;color:var(--c-text-sub);transition:color .2s;position:relative;}
 .header-nav a:hover{color:var(--c-primary);}
 .header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--c-accent);transition:width .3s;}
 .header-nav a:hover::after{width:100%;}
