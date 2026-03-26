@@ -22,11 +22,18 @@ body{font-family:var(--f-sans);color:var(--c-text);background:var(--c-bg);font-w
 .header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 1px 0 var(--c-line);}
 .header-logo{display:flex;align-items:center;}
 .header-logo img{height:40px;width:auto;}
-.header-nav{display:flex;gap:32px;align-items:center;}
-.header-nav a{font-family:var(--f-serif);font-size:13px;font-weight:300;letter-spacing:2px;color:var(--c-text-sub);transition:color .2s;position:relative;}
-.header-nav a:hover{color:var(--c-primary);}
-.header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--c-accent);transition:width .3s;}
-.header-nav a:hover::after{width:100%;}
+.header-nav{display:flex;gap:28px;align-items:center;}
+.header-nav>a,.header-nav .nav-dropdown>a{font-family:var(--f-serif);font-size:13px;font-weight:300;letter-spacing:2px;color:var(--c-text-sub);transition:color .2s;position:relative;}
+.header-nav>a:hover,.header-nav .nav-dropdown>a:hover{color:var(--c-primary);}
+.header-nav>a::after,.header-nav .nav-dropdown>a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--c-accent);transition:width .3s;}
+.header-nav>a:hover::after,.header-nav .nav-dropdown>a:hover::after{width:100%;}
+/* Dropdown */
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{position:absolute;top:100%;left:-12px;padding-top:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;}
+.nav-dropdown-menu-inner{background:var(--c-white);border:1px solid var(--c-line);box-shadow:0 8px 24px rgba(0,0,0,.08);min-width:200px;padding:8px 0;}
+.nav-dropdown-menu a{display:block;padding:10px 20px;font-family:var(--f-serif);font-size:12px;letter-spacing:1.5px;color:var(--c-text-sub);transition:all .2s;white-space:nowrap;}
+.nav-dropdown-menu a:hover{color:var(--c-primary);background:var(--c-bg-warm);}
 .header-cta{font-size:11px;letter-spacing:1.5px;padding:10px 28px;border:1px solid var(--c-primary);color:var(--c-primary);transition:all .2s;cursor:pointer;background:none;}
 .header-cta:hover{background:var(--c-primary);color:var(--c-white);}
 
