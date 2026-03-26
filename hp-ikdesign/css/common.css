@@ -1,12 +1,14 @@
 :root{
-  --c-primary:#2c3e50;
-  --c-accent:#b8860b;
-  --c-bg:#fafaf8;
-  --c-bg-warm:#f5f4f0;
-  --c-text:#1a1a1a;
-  --c-text-sub:#666;
-  --c-line:#e8e6e0;
+  --c-primary:#0a0e27;
+  --c-accent:#4f8cff;
+  --c-accent2:#00d4aa;
+  --c-bg:#f8f9fc;
+  --c-bg-warm:#f0f2f8;
+  --c-text:#1a1a2e;
+  --c-text-sub:#6b7280;
+  --c-line:#e2e5ef;
   --c-white:#fff;
+  --gradient:linear-gradient(135deg,#4f8cff,#00d4aa);
   --f-serif:'Noto Serif JP',serif;
   --f-sans:'Noto Sans JP',sans-serif;
   --f-en:'Cormorant Garamond',serif;
