@@ -1,18 +1,18 @@
 /* ── Hero ── */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;background:var(--c-primary);overflow:hidden;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,#0a0e27 0%,#121838 50%,#0d1a3a 100%);z-index:1;}
-.hero-overlay::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(79,140,255,.15) 1px,transparent 1px);background-size:32px 32px;z-index:2;}
-.hero-overlay::after{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(79,140,255,.08) 0%,transparent 70%);z-index:2;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,#f0f4f7 0%,#e8eef2 40%,#f5f7f9 100%);z-index:1;}
+.hero-overlay::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(58,79,92,.08) 1px,transparent 1px);background-size:40px 40px;z-index:2;}
+.hero-overlay::after{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(90,122,138,.05) 0%,transparent 70%);z-index:2;}
 .hero-content{position:relative;z-index:3;max-width:var(--max-w);margin:0 auto;padding:0 var(--section-px);width:100%;animation:heroFadeIn 1s ease-out;}
 @keyframes heroFadeIn{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
 .hero-en{font-family:var(--f-en);font-style:italic;font-size:14px;color:var(--c-accent);letter-spacing:4px;margin-bottom:24px;}
-.hero-catch{font-family:var(--f-serif);font-size:48px;font-weight:300;color:var(--c-white);line-height:1.6;letter-spacing:3px;margin-bottom:20px;}
+.hero-catch{font-family:var(--f-serif);font-size:48px;font-weight:300;color:var(--c-primary);line-height:1.6;letter-spacing:3px;margin-bottom:20px;}
 .hero-catch strong{font-weight:500;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:14px;color:rgba(255,255,255,.55);letter-spacing:1px;margin-bottom:48px;max-width:520px;line-height:2;}
+.hero-sub{font-size:14px;color:var(--c-text-sub);letter-spacing:1px;margin-bottom:48px;max-width:520px;line-height:2;}
 .hero-cta{display:inline-block;padding:16px 48px;background:var(--gradient);color:var(--c-white);font-size:13px;letter-spacing:2px;transition:all .3s;border:none;border-radius:2px;}
-.hero-cta:hover{box-shadow:0 8px 32px rgba(79,140,255,.3);transform:translateY(-2px);}
+.hero-cta:hover{box-shadow:0 8px 32px rgba(58,79,92,.25);transform:translateY(-2px);}
 .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;}
-.hero-scroll span{font-family:var(--f-en);font-size:10px;color:rgba(255,255,255,.4);letter-spacing:3px;writing-mode:vertical-rl;}
+.hero-scroll span{font-family:var(--f-en);font-size:10px;color:rgba(26,46,40,.3);letter-spacing:3px;writing-mode:vertical-rl;}
 .hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--c-accent),transparent);animation:scrollLine 2s infinite;}
 @keyframes scrollLine{0%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);transform-origin:top;}}
 
@@ -21,7 +21,7 @@
 .service-card{padding:40px 32px;background:var(--c-white);border:1px solid var(--c-line);transition:all .4s;position:relative;overflow:hidden;}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);transform:scaleX(0);transition:transform .4s;transform-origin:left;}
 .service-card:hover::before{transform:scaleX(1);}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(79,140,255,.12);}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(58,79,92,.1);}
 .service-card-icon{font-size:36px;margin-bottom:16px;}
 .service-card-num{font-family:var(--f-en);font-size:48px;color:var(--c-line);font-weight:300;line-height:1;margin-bottom:24px;}
 .service-card-title{font-family:var(--f-serif);font-size:18px;font-weight:400;margin-bottom:12px;letter-spacing:1px;}

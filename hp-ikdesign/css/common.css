@@ -1,14 +1,14 @@
 :root{
-  --c-primary:#0a0e27;
-  --c-accent:#4f8cff;
-  --c-accent2:#00d4aa;
-  --c-bg:#f8f9fc;
-  --c-bg-warm:#f0f2f8;
-  --c-text:#1a1a2e;
+  --c-primary:#3a4f5c;
+  --c-accent:#5a7a8a;
+  --c-accent2:#7a9aaa;
+  --c-bg:#ffffff;
+  --c-bg-warm:#f5f7f9;
+  --c-text:#2a2a3e;
   --c-text-sub:#6b7280;
-  --c-line:#e2e5ef;
+  --c-line:#e2e6ea;
   --c-white:#fff;
-  --gradient:linear-gradient(135deg,#4f8cff,#00d4aa);
+  --gradient:linear-gradient(135deg,#3a4f5c,#7a9aaa);
   --f-serif:'Noto Serif JP',serif;
   --f-sans:'Noto Sans JP',sans-serif;
   --f-en:'Cormorant Garamond',serif;
@@ -36,6 +36,8 @@ body{font-family:var(--f-sans);color:var(--c-text);background:var(--c-bg);font-w
 .nav-dropdown-menu-inner{background:var(--c-white);border:1px solid var(--c-line);box-shadow:0 8px 24px rgba(0,0,0,.08);min-width:200px;padding:8px 0;}
 .nav-dropdown-menu a{display:block;padding:10px 20px;font-family:var(--f-serif);font-size:12px;letter-spacing:1.5px;color:var(--c-text-sub);transition:all .2s;white-space:nowrap;}
 .nav-dropdown-menu a:hover{color:var(--c-primary);background:var(--c-bg-warm);}
+.nav-dropdown-menu a.coming-soon{color:#bbb;pointer-events:none;position:relative;}
+.nav-dropdown-menu a.coming-soon::after{content:'Coming Soon';font-family:var(--f-en);font-size:9px;color:#ccc;margin-left:8px;letter-spacing:1px;}
 .header-cta{font-size:11px;letter-spacing:1.5px;padding:10px 28px;border:1px solid var(--c-primary);color:var(--c-primary);transition:all .2s;cursor:pointer;background:none;}
 .header-cta:hover{background:var(--c-primary);color:var(--c-white);}
 
