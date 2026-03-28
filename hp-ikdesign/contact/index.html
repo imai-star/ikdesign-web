@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCVHQ7R9TV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JCVHQ7R9TV');
+</script>
 <title>お問い合わせ | IKDesign株式会社</title>
 <meta name="description" content="IKDesign株式会社へのお問い合わせ。不動産の相続・売却・空き家のご相談は初回無料・秘密厳守。お気軽にお問い合わせください。">
 <meta property="og:title" content="お問い合わせ | IKDesign株式会社">
@@ -117,8 +125,7 @@
           <p class="section-en">Inquiry Form</p>
           <h2 class="section-title">無料相談フォーム</h2>
           <div class="section-line"></div>
-          <form id="contact-form" name="contact-hp" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
-            <input type="hidden" name="form-name" value="contact-hp">
+          <form id="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
               <div class="form-group">
                 <label>お名前<span class="required">必須</span></label>
@@ -218,13 +225,27 @@
 function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contact-form');
-  const data = new FormData(form);
-  fetch('/', {
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+
+  const payload = {
+    name: form.querySelector('[name="name"]').value,
+    kana: form.querySelector('[name="kana"]').value,
+    email: form.querySelector('[name="email"]').value,
+    phone: form.querySelector('[name="tel"]').value,
+    category: form.querySelector('[name="category"]').value,
+    message: form.querySelector('[name="message"]').value
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbzMnVh3tWIScrRmJkoRAldIf40ksaNwuyTX_YxYrIMQg-czklq4rAH4eEHBQ47J2IylGQ/exec', {
     method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: new URLSearchParams(data).toString()
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
   })
   .then(() => {
+    if (typeof gtag === 'function') gtag('event','form_submit',{event_category:'contact',event_label:'hp_contact_form'});
     document.getElementById('form-content').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   })
