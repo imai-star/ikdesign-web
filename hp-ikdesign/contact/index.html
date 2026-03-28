@@ -238,10 +238,10 @@ function handleSubmit(e) {
     message: form.querySelector('[name="message"]').value
   };
 
-  fetch('https://script.google.com/macros/s/AKfycbzMnVh3tWIScrRmJkoRAldIf40ksaNwuyTX_YxYrIMQg-czklq4rAH4eEHBQ47J2IylGQ/exec', {
+  fetch('https://script.google.com/macros/s/AKfycby0ZDXIri6XK_8qrA7xPSQCBNhzAnnXT_xn0xu7n2FEd6mI-xhBuVtN_1M8zzbLWYQraQ/exec', {
     method: 'POST',
     mode: 'no-cors',
-    headers: {'Content-Type': 'application/json'},
+    headers: {'Content-Type': 'text/plain'},
     body: JSON.stringify(payload)
   })
   .then(() => {

@@ -1,6 +1,14 @@
+// この関数を実行して権限を承認してください
+function authorize() {
+  Logger.log('承認完了');
+  Logger.log('スプレッドシートアクセス: ' + SpreadsheetApp.getActiveSpreadsheet());
+  Logger.log('メール送信テスト準備完了');
+}
+
 function doPost(e) {
   try {
-    var data = JSON.parse(e.postData.contents);
+    var raw = e.postData.contents;
+    var data = JSON.parse(raw);
 
     // スプレッドシートに保存
     var ssId = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
