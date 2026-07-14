@@ -11,12 +11,27 @@
     ],
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+      { "source": "/company", "destination": "/#message", "type": 301 },
+      { "source": "/services", "destination": "/#services", "type": 301 },
+      { "source": "/network", "destination": "/#network", "type": 301 },
+      { "source": "/inheritance", "destination": "/fudosan", "type": 301 },
+      { "source": "/management", "destination": "/keiei", "type": 301 },
+      { "source": "/system", "destination": "/ai-dx", "type": 301 },
+      { "source": "/contact", "destination": "/#contact", "type": 301 }
+    ],
     "headers": [
       {
         "source": "**",
         "headers": [
           {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
           {"key": "X-Content-Type-Options", "value": "nosniff"}
+        ]
+      },
+      {
+        "source": "/assets/**",
+        "headers": [
+          {"key": "Cache-Control", "value": "public, max-age=604800"}
         ]
       }
     ]

@@ -1,0 +1,147 @@
+/* IKDesign コーポレートサイト 共通スタイル（カラー刷新 2026-07）
+   モックのインラインstyleはそのまま活かし、ここでは基盤・レスポンシブ・
+   インタラクション（ハンバーガー/アコーディオン/絞り込み）のみを定義する。 */
+
+:root {
+  --slate-50:#f4f6f8; --slate-100:#e2e8ec; --slate-200:#c3d0d8;
+  --slate-300:#9db0bb; --slate-400:#7a9aaa; --slate-500:#5a7a8a;
+  --slate-600:#47606e; --slate-700:#3a4f5c; --slate-800:#2b3d47;
+  --slate-900:#1e2c34;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+
+/* 画像スロット。写真未指定のものは透過で背景グラデを活かす */
+.photo-slot { display: block; }
+div.photo-slot[data-slot="column-feature"] {
+  background:
+    repeating-linear-gradient(135deg, #edf1f4, #edf1f4 16px, #e6ebef 16px, #e6ebef 32px);
+}
+
+/* ── ヘッダー / ナビ ─────────────────────────────────────────── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px; height: 44px;
+  padding: 0 10px;
+  background: none;
+  border: 1px solid var(--slate-100);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--slate-700);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── アコーディオン（FAQ） ──────────────────────────────────── */
+.dc-panel[data-open="false"] { display: none; }
+.dc-acc-q { transition: opacity .15s ease; }
+.dc-acc-q:hover { opacity: .7; }
+
+/* ── コラム カテゴリ絞り込み ──────────────────────────────────── */
+.dc-cat { transition: background .15s ease, color .15s ease, border-color .15s ease; }
+.dc-feature[data-open="false"] { display: none; }
+
+/* ── レスポンシブ ─────────────────────────────────────────────── */
+/* タブレット以下: ハンバーガーナビへ切替 */
+@media (max-width: 920px) {
+  header { position: sticky; }
+  header > div {
+    position: relative;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+  }
+  /* ロゴ・ワードマークを縮小して1行に収める */
+  header a img[alt="IKDesign"] { height: 58px !important; }
+  header a span[style*="font-size:27px"] { font-size: 20px !important; }
+  header a span[style*="font-size:11px"] { font-size: 9px !important; letter-spacing: 0.24em !important; }
+
+  .nav-toggle { display: inline-flex; flex-shrink: 0; }
+  .site-nav {
+    display: none !important;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0 !important;
+    background: #ffffff;
+    border-top: 1px solid var(--slate-100);
+    border-bottom: 1px solid var(--slate-100);
+    box-shadow: 0 12px 24px rgba(30,44,52,0.08);
+    padding: 8px 20px 16px;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+  }
+  .site-nav.open { display: flex !important; }
+  .site-nav > a { padding: 14px 4px !important; border-bottom: 1px solid var(--slate-50); }
+  /* ナビ内の「無料相談」ボタンは全幅に */
+  .site-nav > a[style*="background:#3a4f5c"],
+  .site-nav > a[style*="background:#5f6b96"],
+  .site-nav > a[style*="background:#a8735c"],
+  .site-nav > a[style*="background:#3d5a48"] {
+    justify-content: center;
+    margin-top: 10px;
+    border-bottom: none !important;
+  }
+}
+
+/* スマホ: 横スクロール防止＋余白・見出し・ボタンの最適化 */
+@media (max-width: 720px) {
+  html, body { overflow-x: hidden; }
+  /* フレックス/グリッドの子がテキストで押し広げないように */
+  header *, section *, footer * { min-width: 0; }
+
+  /* コンテンツ内側の左右パディングを詰める（インライン shorthand を上書き） */
+  header > div { padding-left: 20px !important; padding-right: 20px !important; }
+  section, footer { padding-left: 20px !important; padding-right: 20px !important; }
+  section > div, footer > div { padding-left: 0 !important; padding-right: 0 !important; }
+  /* カード等、内側パネルは適度な余白を維持 */
+  section > div > div,
+  section [style*="border-radius:12px"][style*="padding:40px"] { padding-left: 22px !important; padding-right: 22px !important; }
+
+  /* 見出しサイズを抑えて折返しを安定させる */
+  h1 { font-size: 30px !important; line-height: 1.5 !important; letter-spacing: 0.03em !important; }
+  h2 { font-size: 26px !important; }
+
+  /* フレックス行は折返し可に（ヒーローCTA・LINE/メール等） */
+  section div[style*="display:flex"][style*="gap:16px"] { flex-wrap: wrap !important; }
+  /* 本文CTAボタンは全幅に */
+  section a[style*="height:54px"],
+  section a[style*="height:52px"],
+  section a[style*="height:46px"] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* 固定列グリッドは単段に */
+  section [style*="grid-template-columns:repeat(3"],
+  section [style*="grid-template-columns:repeat(4"],
+  section [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
+  section [style*="grid-template-columns:repeat(7"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* 代表挨拶の2カラムを単段に */
+  section [style*="grid-template-columns:380px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* アクセシビリティ: モーション削減 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
