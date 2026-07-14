@@ -13,25 +13,11 @@
 html { scroll-behavior: smooth; }
 img { max-width: 100%; }
 
-/* 画像プレースホルダ（写真は後日ドロップ）。
-   FVヒーロー内は透過で背景グラデを活かす。白カード上の枠（注目記事等）は
-   意図的な画像エリアと分かるよう淡いパターンを敷く。 */
+/* 画像スロット。写真未指定のものは透過で背景グラデを活かす */
 .photo-slot { display: block; }
-.photo-slot[data-slot="column-feature"] {
+div.photo-slot[data-slot="column-feature"] {
   background:
     repeating-linear-gradient(135deg, #edf1f4, #edf1f4 16px, #e6ebef 16px, #e6ebef 32px);
-}
-.photo-slot[data-slot="column-feature"]::after {
-  content: "写真";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  color: #9db0bb;
 }
 
 /* ── ヘッダー / ナビ ─────────────────────────────────────────── */
