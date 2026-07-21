@@ -138,6 +138,13 @@ div.photo-slot[data-slot="column-feature"] {
   section [style*="grid-template-columns:380px"] {
     grid-template-columns: 1fr !important;
   }
+  /* 会社概要テーブルの「項目｜内容」を単段に（項目を上に） */
+  section [style*="grid-template-columns:180px"] {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
 }
 
 /* アクセシビリティ: モーション削減 */
