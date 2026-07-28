@@ -18,7 +18,8 @@
       { "source": "/inheritance", "destination": "/fudosan", "type": 301 },
       { "source": "/management", "destination": "/keiei", "type": 301 },
       { "source": "/system", "destination": "/ai-dx", "type": 301 },
-      { "source": "/contact", "destination": "/#contact", "type": 301 }
+      { "source": "/contact", "destination": "/#contact", "type": 301 },
+      { "source": "/contact_preview.html", "destination": "/#contact", "type": 301 }
     ],
     "headers": [
       {
