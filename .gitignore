@@ -1,2 +1,6 @@
 # Local Netlify folder
 .netlify
+
+# deploy cache / local tool config
+.firebase/
+.claude/
