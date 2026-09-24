@@ -6,8 +6,8 @@
 | ファイル | 用途 | 出所 | ライセンス | 帰属表示 |
 |---|---|---|---|---|
 | hero-home.jpg | ホーム／コラムTOP | Lorem Picsum (id 864) | Unsplash License | 不要 |
-| hero-fudosan.jpg | 不動産コンサル | Lorem Picsum (id 288) | Unsplash License | 不要 |
-| hero-aidx.jpg | AIシステム開発 | Lorem Picsum (id 180) | Unsplash License | 不要 |
+| hero-fudosan.jpg | 不動産コンサル | Unsplash「街の鳥瞰図」photo-1543491434-cf5cd3f7da64（日本の住宅密集地の空撮・2026-09-24差替） | Unsplash License | 不要 |
+| hero-aidx.jpg | AIシステム開発 | Unsplash photo-1460925895917-afdab827c52f（業務ダッシュボード画面・2026-09-24差替） | Unsplash License | 不要 |
 | hero-keiei.jpg | 経営コンサル | Lorem Picsum (id 972) | Unsplash License | 不要 |
 | hero-akiya.jpg | 空き家対策 | Wikimedia Commons「An abandoned house」 | **CC BY 2.0** | **要** |
 | feature-column.jpg | コラム注目記事 | Lorem Picsum (id 486) | Unsplash License | 不要 |

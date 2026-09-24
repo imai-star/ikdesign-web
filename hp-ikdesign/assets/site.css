@@ -134,6 +134,10 @@ div.photo-slot[data-slot="column-feature"] {
   section [style*="grid-template-columns:repeat(7"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  /* 空き家グラフ（1993〜2043年）は横スクロールで表示 */
+  .akc-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -4px; padding: 0 4px; }
+  .akc-inner { min-width: 680px; }
+  .akc-hint { display: block !important; }
   /* 代表挨拶の2カラムを単段に */
   section [style*="grid-template-columns:380px"] {
     grid-template-columns: 1fr !important;
@@ -152,3 +156,6 @@ div.photo-slot[data-slot="column-feature"] {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* 空き家グラフのスクロール案内（スマホのみ表示） */
+.akc-hint { display: none; margin: 8px 0 0; font-size: 11px; letter-spacing: 0.04em; color: #9db0bb; text-align: center; }

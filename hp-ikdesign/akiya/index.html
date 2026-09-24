@@ -33,7 +33,7 @@
   a { color:#5a7a8a; text-decoration:none; }
   a:hover { color:#47606e; text-decoration:underline; }
 </style>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=20260924">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://ikd-kk.com/"},{"@type":"ListItem","position":2,"name":"空き家対策","item":"https://ikd-kk.com/akiya"}]}</script>
 </head>
 <body data-features="accordion">
@@ -139,150 +139,128 @@
       <p style="margin:28px 0 0; font-size:11px; letter-spacing:0.04em; color:#9db0bb; text-align:right;">出典：総務省「令和5年住宅・土地統計調査」（2023年10月1日現在）</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e2e8ec; border-radius:12px; padding:40px 40px 32px;">
+      <!-- akiya-chart:start（scripts/akiya-chart.mjs で生成） -->
       <h3 style="margin:0 0 8px; font-family:'Noto Serif JP', serif; font-weight:600; font-size:22px; letter-spacing:0.06em; color:#3a4f5c;">空き家は増え続け、人口は減り続けています</h3>
-      <p style="margin:0 0 24px; font-size:13px; line-height:1.9; color:#6b7280;">この30年、空き家は一度も減ることなく約2倍に。なかでも賃貸・売却の予定すらない「使い道のない空き家」——放置され、特定空家の予備軍となる家——は約2.6倍と、空き家全体を上回るペースで増えています。人口は2008年前後をピークに減少へ転じており、この差は今後さらに開きます。</p>
-      <div style="position:relative;">
-        <div style="position:absolute; top:0; bottom:34px; left:50.0%; border-left:2px dashed #c29079;"></div>
-        <span style="position:absolute; top:-4px; left:50.0%; transform:translateX(-50%); background:#f8f1ec; color:#7d4f3c; font-size:11px; font-weight:700; letter-spacing:0.06em; padding:3px 10px; border-radius:11px; white-space:nowrap;">2008年 人口ピーク</span>
-        <div style="display:flex; flex-direction:column; gap:8px; padding-top:28px;">
-          
+      <p style="margin:0 0 16px; font-size:13px; line-height:1.9; color:#6b7280;">この30年、空き家は一度も減ることなく約2倍に。なかでも賃貸・売却の予定すらない「使い道のない空き家」——放置され、特定空家の予備軍となる家——は約2.6倍と、空き家全体を上回るペースで増えています。人口は2008年をピークに減少へ転じ、2043年には約1億1,000万人まで減る見通しです。その一方で空き家は、これからの20年でさらに約2倍に増えると予測されています。</p>
+      <p style="margin:0 0 20px; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:11px; color:#6b7280;">
+        <span style="display:inline-flex; align-items:center; gap:6px;"><span style="display:inline-block; width:20px; border-top:2.5px solid #6b7280;"></span>実績</span>
+        <span style="display:inline-flex; align-items:center; gap:6px;"><span style="display:inline-block; width:20px; border-top:2.5px dashed #6b7280;"></span>予測・見込み</span>
+      </p>
+      <div class="akc-scroll">
+      <div class="akc-inner" style="position:relative;">
+        <div style="position:absolute; top:0; bottom:34px; left:63.6%; right:0; background:#f6f8f9; border-radius:8px;"></div>
+        <span style="position:absolute; top:-4px; left:63.6%; margin-left:8px; background:#eef1f3; color:#5a7a8a; font-size:11px; font-weight:700; letter-spacing:0.06em; padding:3px 10px; border-radius:11px; white-space:nowrap;">予測 →</span>
+        <div style="position:absolute; top:0; bottom:34px; left:31.8%; border-left:2px dashed #c29079;"></div>
+        <span style="position:absolute; top:-4px; left:31.8%; transform:translateX(-50%); background:#f8f1ec; color:#7d4f3c; font-size:11px; font-weight:700; letter-spacing:0.06em; padding:3px 10px; border-radius:11px; white-space:nowrap;">2008年 人口ピーク</span>
+        <div style="position:relative; display:flex; flex-direction:column; gap:8px; padding-top:28px;">
             <div>
-              <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:2px;">
+              <div style="display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-bottom:2px;">
                 <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:#3a4f5c;"><span style="display:inline-block; width:18px; height:4px; background:#5c7f68; border-radius:2px;"></span>空き家数</span>
-                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#eef4f0; border-radius:10px; font-size:11px; font-weight:700; color:#3d5a48;">30年で約2倍（+101%）</span>
+                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#eef4f0; border-radius:10px; font-size:11px; font-weight:700; color:#3d5a48;">30年で約2倍 → 2043年には約1,861万戸（予測）</span>
               </div>
               <div style="position:relative; width:100%; height:96px;">
                 <div style="position:absolute; left:0; right:0; bottom:0; border-bottom:1px solid #e2e8ec;"></div>
                 <svg style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <polygon points="7.0,88.0 21.3,69.3 35.7,57.2 50.0,42.9 64.3,33.7 78.7,29.4 93.0,22.0 93.0,100 7.0,100" fill="#5c7f68" fill-opacity="0.10" stroke="none"></polygon>
-                  <polyline points="7.0,88.0 21.3,69.3 35.7,57.2 50.0,42.9 64.3,33.7 78.7,29.4 93.0,22.0" fill="none" stroke="#5c7f68" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polygon points="4.5,88.0 13.6,82.0 22.7,78.1 31.8,73.6 40.9,70.6 50.0,69.3 59.1,66.9 59.1,100 4.5,100" fill="#5c7f68" fill-opacity="0.10" stroke="none"></polygon>
+                  <polygon points="59.1,66.9 68.2,59.9 77.3,49.3 86.4,36.3 95.5,22.0 95.5,100 59.1,100" fill="#5c7f68" fill-opacity="0.05" stroke="none"></polygon>
+                  <polyline points="4.5,88.0 13.6,82.0 22.7,78.1 31.8,73.6 40.9,70.6 50.0,69.3 59.1,66.9" fill="none" stroke="#5c7f68" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polyline points="59.1,66.9 68.2,59.9 77.3,49.3 86.4,36.3 95.5,22.0" fill="none" stroke="#5c7f68" stroke-width="2.4" stroke-dasharray="5 4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
                 </svg>
-                
-                  <span style="position:absolute; left:7.0%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:21.3%; top:69.3%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:35.7%; top:57.2%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:50.0%; top:42.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:64.3%; top:33.7%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:78.7%; top:29.4%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:93.0%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                
-                  <span style="position:absolute; left:7.0%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">448万戸</span>
-                
-                  <span style="position:absolute; left:21.3%; top:69.3%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">576万戸</span>
-                
-                  <span style="position:absolute; left:35.7%; top:57.2%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">659万戸</span>
-                
-                  <span style="position:absolute; left:50.0%; top:42.9%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">757万戸</span>
-                
-                  <span style="position:absolute; left:64.3%; top:33.7%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">820万戸</span>
-                
-                  <span style="position:absolute; left:78.7%; top:29.4%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">849万戸</span>
-                
-                  <span style="position:absolute; left:93.0%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">900万戸</span>
-                
+                  <span style="position:absolute; left:4.5%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:13.6%; top:82.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:22.7%; top:78.1%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:31.8%; top:73.6%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:40.9%; top:70.6%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:50.0%; top:69.3%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:59.1%; top:66.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#5c7f68; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:68.2%; top:59.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #5c7f68; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:77.3%; top:49.3%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #5c7f68; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:86.4%; top:36.3%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #5c7f68; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:95.5%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #5c7f68; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:4.5%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">448万戸</span>
+                  <span style="position:absolute; left:31.8%; top:73.6%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">757万戸</span>
+                  <span style="position:absolute; left:59.1%; top:66.9%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">900万戸</span>
+                  <span style="position:absolute; left:77.3%; top:49.3%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">1,277万戸</span>
+                  <span style="position:absolute; left:95.5%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3d5a48; white-space:nowrap;">1,861万戸</span>
               </div>
             </div>
-          
             <div>
-              <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:2px;">
+              <div style="display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-bottom:2px;">
                 <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:#3a4f5c;"><span style="display:inline-block; width:18px; height:4px; background:#a8735c; border-radius:2px;"></span>使い道のない空き家（賃貸・売却用等を除く）</span>
-                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#f8f1ec; border-radius:10px; font-size:11px; font-weight:700; color:#7d4f3c;">30年で約2.6倍——最も危険な放置空き家が急増</span>
+                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#f8f1ec; border-radius:10px; font-size:11px; font-weight:700; color:#7d4f3c;">30年で約2.6倍 → 2030年には約470万戸の見込み</span>
               </div>
               <div style="position:relative; width:100%; height:96px;">
                 <div style="position:absolute; left:0; right:0; bottom:0; border-bottom:1px solid #e2e8ec;"></div>
                 <svg style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <polygon points="7.0,88.0 21.3,78.8 35.7,70.4 50.0,54.7 64.3,40.7 78.7,32.1 93.0,22.0 93.0,100 7.0,100" fill="#a8735c" fill-opacity="0.10" stroke="none"></polygon>
-                  <polyline points="7.0,88.0 21.3,78.8 35.7,70.4 50.0,54.7 64.3,40.7 78.7,32.1 93.0,22.0" fill="none" stroke="#a8735c" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polygon points="4.5,88.0 13.6,81.2 22.7,75.0 31.8,63.5 40.9,53.3 50.0,46.9 59.1,39.5 59.1,100 4.5,100" fill="#a8735c" fill-opacity="0.10" stroke="none"></polygon>
+                  <polygon points="59.1,39.5 71.8,22.0 71.8,100 59.1,100" fill="#a8735c" fill-opacity="0.05" stroke="none"></polygon>
+                  <polyline points="4.5,88.0 13.6,81.2 22.7,75.0 31.8,63.5 40.9,53.3 50.0,46.9 59.1,39.5" fill="none" stroke="#a8735c" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polyline points="59.1,39.5 71.8,22.0" fill="none" stroke="#a8735c" stroke-width="2.4" stroke-dasharray="5 4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
                 </svg>
-                
-                  <span style="position:absolute; left:7.0%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:21.3%; top:78.8%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:35.7%; top:70.4%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:50.0%; top:54.7%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:64.3%; top:40.7%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:78.7%; top:32.1%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:93.0%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                
-                  <span style="position:absolute; left:7.0%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">149万戸</span>
-                
-                  <span style="position:absolute; left:50.0%; top:54.7%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">268万戸</span>
-                
-                  <span style="position:absolute; left:93.0%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">385万戸</span>
-                
+                  <span style="position:absolute; left:4.5%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:13.6%; top:81.2%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:22.7%; top:75.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:31.8%; top:63.5%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:40.9%; top:53.3%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:50.0%; top:46.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:59.1%; top:39.5%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#a8735c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:71.8%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #a8735c; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:4.5%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">149万戸</span>
+                  <span style="position:absolute; left:31.8%; top:63.5%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">268万戸</span>
+                  <span style="position:absolute; left:59.1%; top:39.5%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">385万戸</span>
+                  <span style="position:absolute; left:71.8%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#7d4f3c; white-space:nowrap;">470万戸（見込み）</span>
               </div>
             </div>
-          
             <div>
-              <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:2px;">
+              <div style="display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-bottom:2px;">
                 <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:#3a4f5c;"><span style="display:inline-block; width:18px; height:4px; background:#3a4f5c; border-radius:2px;"></span>総人口</span>
-                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#f4f6f8; border-radius:10px; font-size:11px; font-weight:700; color:#3a4f5c;">2008年ピーク→減少（▲373万人）</span>
+                <span style="display:inline-flex; align-items:center; height:20px; padding:0 10px; background:#f4f6f8; border-radius:10px; font-size:11px; font-weight:700; color:#3a4f5c;">2008年ピーク → 2043年には約1,765万人減（推計）</span>
               </div>
               <div style="position:relative; width:100%; height:96px;">
                 <div style="position:absolute; left:0; right:0; bottom:0; border-bottom:1px solid #e2e8ec;"></div>
                 <svg style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <polygon points="7.0,77.6 21.3,50.5 35.7,28.9 50.0,22.0 64.3,35.8 78.7,51.0 93.0,88.0 93.0,100 7.0,100" fill="#3a4f5c" fill-opacity="0.10" stroke="none"></polygon>
-                  <polyline points="7.0,77.6 21.3,50.5 35.7,28.9 50.0,22.0 64.3,35.8 78.7,51.0 93.0,88.0" fill="none" stroke="#3a4f5c" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polygon points="4.5,33.7 13.6,28.0 22.7,23.5 31.8,22.0 40.9,24.9 50.0,28.1 59.1,35.9 59.1,100 4.5,100" fill="#3a4f5c" fill-opacity="0.10" stroke="none"></polygon>
+                  <polygon points="59.1,35.9 68.2,46.9 77.3,59.4 86.4,73.2 95.5,88.0 95.5,100 59.1,100" fill="#3a4f5c" fill-opacity="0.05" stroke="none"></polygon>
+                  <polyline points="4.5,33.7 13.6,28.0 22.7,23.5 31.8,22.0 40.9,24.9 50.0,28.1 59.1,35.9" fill="none" stroke="#3a4f5c" stroke-width="2.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polyline points="59.1,35.9 68.2,46.9 77.3,59.4 86.4,73.2 95.5,88.0" fill="none" stroke="#3a4f5c" stroke-width="2.4" stroke-dasharray="5 4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"></polyline>
                 </svg>
-                
-                  <span style="position:absolute; left:7.0%; top:77.6%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:21.3%; top:50.5%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:35.7%; top:28.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:50.0%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:64.3%; top:35.8%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:78.7%; top:51.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                  <span style="position:absolute; left:93.0%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
-                
-                
-                  <span style="position:absolute; left:7.0%; top:77.6%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,494万人</span>
-                
-                  <span style="position:absolute; left:50.0%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,808万人</span>
-                
-                  <span style="position:absolute; left:93.0%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,435万人</span>
-                
+                  <span style="position:absolute; left:4.5%; top:33.7%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:13.6%; top:28.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:22.7%; top:23.5%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:31.8%; top:22.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:40.9%; top:24.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:50.0%; top:28.1%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:59.1%; top:35.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#3a4f5c; border:2px solid #ffffff; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:68.2%; top:46.9%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #3a4f5c; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:77.3%; top:59.4%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #3a4f5c; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:86.4%; top:73.2%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #3a4f5c; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:95.5%; top:88.0%; width:8px; height:8px; margin:-4px 0 0 -4px; background:#ffffff; border:2px solid #3a4f5c; border-radius:50%; box-sizing:border-box;"></span>
+                  <span style="position:absolute; left:4.5%; top:33.7%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,494万人</span>
+                  <span style="position:absolute; left:31.8%; top:22.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,808万人</span>
+                  <span style="position:absolute; left:59.1%; top:35.9%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">12,435万人</span>
+                  <span style="position:absolute; left:95.5%; top:88.0%; transform:translate(-50%, -100%); padding-bottom:7px; font-size:11px; font-weight:700; color:#3a4f5c; white-space:nowrap;">11,043万人</span>
               </div>
             </div>
-          
         </div>
-        <div style="display:grid; grid-template-columns:repeat(7, 1fr); margin-top:10px;">
-          
+        <div style="position:relative; display:grid; grid-template-columns:repeat(11, 1fr); margin-top:10px;">
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">1993年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">1998年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">2003年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">2008年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">2013年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">2018年</span>
-          
             <span style="font-size:12px; letter-spacing:0.04em; color:#6b7280; text-align:center;">2023年</span>
-          
+            <span style="font-size:12px; letter-spacing:0.04em; color:#9db0bb; text-align:center;">2028年</span>
+            <span style="font-size:12px; letter-spacing:0.04em; color:#9db0bb; text-align:center;">2033年</span>
+            <span style="font-size:12px; letter-spacing:0.04em; color:#9db0bb; text-align:center;">2038年</span>
+            <span style="font-size:12px; letter-spacing:0.04em; color:#9db0bb; text-align:center;">2043年</span>
         </div>
       </div>
-      <p style="margin:20px 0 0; font-size:13px; line-height:1.9; color:#3a4f5c; font-weight:700;">民間シンクタンクは2043年に空き家約1,861万戸・空き家率25%超——「4戸に1戸が空き家」の時代を予測しています。売れるうちに、貸せるうちに動くことが資産を守る最大の対策です。</p>
-      <p style="margin:24px 0 0; font-size:11px; letter-spacing:0.04em; color:#9db0bb; text-align:right;">出典：総務省「住宅・土地統計調査」（各年）／総務省「国勢調査」・人口推計／将来予測は野村総合研究所（2024年6月公表）</p>
+      </div>
+      <p class="akc-hint">← 左へスクロールすると過去の推移を見られます</p>
+      <p style="margin:20px 0 0; font-size:13px; line-height:1.9; color:#3a4f5c; font-weight:700;">2043年には空き家約1,861万戸・空き家率25%超——「4戸に1戸が空き家」の時代が予測されています。売れるうちに、貸せるうちに動くことが資産を守る最大の対策です。</p>
+      <p style="margin:24px 0 0; font-size:11px; line-height:1.8; letter-spacing:0.04em; color:#9db0bb; text-align:right;">出典：総務省「住宅・土地統計調査」（各年）／総務省「国勢調査」・人口推計<br>予測：空き家数は野村総合研究所（2024年6月公表）、使い道のない空き家は国土交通省（2030年見込み）、総人口は国立社会保障・人口問題研究所「日本の将来推計人口（令和5年推計）」出生中位・死亡中位</p>
+<!-- akiya-chart:end -->
     </div>
   </div>
 </section>
@@ -642,7 +620,7 @@
   <div style="border-top:1px solid #2b3d47; padding:24px 0; text-align:center; font-size:12px; letter-spacing:0.08em; color:#9db0bb;"><span style="display:block; margin-bottom:8px; font-size:11px; letter-spacing:0.04em; color:#7a8a94;">写真: <a href="https://commons.wikimedia.org/wiki/File:An_abandoned_house_(7385274366).jpg" target="_blank" rel="noopener" style="color:inherit;">An abandoned house</a> by Su--May (CC BY 2.0)</span>© 2026 IKDesign Co., Ltd.</div>
 </footer>
 
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=20260924" defer></script>
 <style id="pseudo">
 .x0:hover{color:#47606e}
 .x1:hover{color:#47606e}

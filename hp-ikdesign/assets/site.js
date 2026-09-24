@@ -81,8 +81,16 @@
     });
   }
 
+  // 空き家グラフ: スマホで横スクロールになるときは、予測（右端）が見える位置から表示する
+  function initChartScroll() {
+    document.querySelectorAll('.akc-scroll').forEach(function (el) {
+      if (el.scrollWidth > el.clientWidth) el.scrollLeft = el.scrollWidth;
+    });
+  }
+
   function boot() {
     initNav();
+    initChartScroll();
     var f = (document.body.getAttribute('data-features') || '').split(/\s+/);
     if (f.indexOf('accordion') >= 0) initAccordion();
     if (f.indexOf('filter') >= 0) initFilter();
