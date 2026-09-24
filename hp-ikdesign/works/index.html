@@ -79,8 +79,9 @@
     .w-card { padding:22px 20px 20px; }
   }
   @media (prefers-reduced-motion:reduce) { a.w-shot:hover img { transform:none; } }
+  @media (max-width: 720px) { .works-hero-veil { background:rgba(248,250,252,0.86) !important; } }
 </style>
-<link rel="stylesheet" href="/assets/site.css?v=20260924">
+<link rel="stylesheet" href="/assets/site.css?v=20260924d">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://ikd-kk.com/"},{"@type":"ListItem","position":2,"name":"AIシステム開発・DX支援","item":"https://ikd-kk.com/ai-dx"},{"@type":"ListItem","position":3,"name":"制作実績","item":"https://ikd-kk.com/works"}]}</script>
 </head>
 <body>
@@ -93,7 +94,8 @@
     <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav" style="display:flex; align-items:center; gap:8px 18px; flex-wrap:wrap; justify-content:flex-end; flex:1; min-width:0;">
       <a class="x0" href="/" style="font-size:13px; font-weight:500; color:#3a4f5c; text-decoration:none; white-space:nowrap;">ホーム</a>
       <a class="x1" href="/fudosan" style="font-size:13px; font-weight:500; color:#3a4f5c; text-decoration:none; white-space:nowrap;">不動産コンサル</a>
-      <a class="x2" href="/ai-dx" style="font-size:13px; font-weight:700; color:#414a6e; text-decoration:none; white-space:nowrap;">AIシステム開発</a>
+      <a class="x2" href="/ai-dx" style="font-size:13px; font-weight:500; color:#414a6e; text-decoration:none; white-space:nowrap;">AIシステム開発</a>
+      <a href="/works" style="font-size:13px; font-weight:700; color:#414a6e; text-decoration:none; white-space:nowrap;">制作実績</a>
       <a class="x3" href="/keiei" style="font-size:13px; font-weight:500; color:#3a4f5c; text-decoration:none; white-space:nowrap;">経営コンサル</a>
       <a class="x4" href="/#cases" style="font-size:13px; font-weight:500; color:#3a4f5c; text-decoration:none; white-space:nowrap;">解決事例</a>
       <a class="x5" href="/akiya" style="font-size:13px; font-weight:500; color:#3a4f5c; text-decoration:none; white-space:nowrap;">空き家対策</a>
@@ -104,12 +106,16 @@
   </div>
 </header>
 
-<section style="background:linear-gradient(135deg, #2b3d47, #8991b5); color:#ffffff;">
-  <div class="w-wrap" style="padding-top:72px; padding-bottom:80px;">
-    <div style="width:30px; height:3px; background:#ffffff; margin-bottom:24px;"></div>
-    <p style="margin:0 0 14px; font-family:'Noto Serif JP', serif; font-style:italic; font-size:16px; letter-spacing:0.12em; color:#c9cede;">Works</p>
-    <h1 style="margin:0 0 20px; font-family:'Noto Serif JP', serif; font-weight:600; font-size:38px; letter-spacing:0.08em; line-height:1.5;">制作実績</h1>
-    <p style="margin:0; max-width:760px; font-size:15px; line-height:2.1; letter-spacing:0.04em; color:#e2e8ec;">
+<section class="works-hero" style="background:#e9edf3; color:#2b3d47; position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0;">
+    <img class="photo-slot" data-slot="works-hero-bg" src="/images/hero/hero-works.jpg?v=20260924" alt="" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left center;">
+  </div>
+  <div class="works-hero-veil" style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(100deg, rgba(248,250,252,0.97) 0%, rgba(248,250,252,0.92) 36%, rgba(248,250,252,0.45) 62%, rgba(248,250,252,0) 85%);"></div>
+  <div class="w-wrap" style="position:relative; padding-top:104px; padding-bottom:112px;">
+    <div style="width:30px; height:3px; background:#5f6b96; margin-bottom:24px;"></div>
+    <p style="margin:0 0 14px; font-family:'Noto Serif JP', serif; font-style:italic; font-size:16px; letter-spacing:0.12em; color:#5f6b96;">Works</p>
+    <h1 style="margin:0 0 20px; font-family:'Noto Serif JP', serif; font-weight:600; font-size:38px; letter-spacing:0.08em; line-height:1.5; color:#2b3d47;">制作実績</h1>
+    <p style="margin:0; max-width:620px; font-size:15px; line-height:2.1; letter-spacing:0.04em; color:#47606e;">
       ビルメンテナンス・不動産・飲食。業種の違うグループ各社の現場で、毎日使われているシステムとWebサイトです。
       どれもパッケージに業務を合わせるのではなく、それぞれの会社の仕事の流れに合わせて設計し、運用しながら改善を続けています。
     </p>
@@ -382,7 +388,7 @@
   <div style="border-top:1px solid #2b3d47; padding:24px 0; text-align:center; font-size:12px; letter-spacing:0.08em; color:#9db0bb;">© 2026 IKDesign Co., Ltd.</div>
 </footer>
 
-<script src="/assets/site.js?v=20260924" defer></script>
+<script src="/assets/site.js?v=20260924d" defer></script>
 <style id="pseudo">
 .x0:hover{color:#47606e}
 .x1:hover{color:#47606e}

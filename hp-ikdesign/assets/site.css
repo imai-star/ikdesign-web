@@ -12,6 +12,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 img { max-width: 100%; }
+/* hidden 属性はインラインの display 指定より優先する（フォームの送信完了切替など） */
+[hidden] { display: none !important; }
 
 /* 画像スロット。写真未指定のものは透過で背景グラデを活かす */
 .photo-slot { display: block; }
@@ -55,8 +57,8 @@ div.photo-slot[data-slot="column-feature"] {
 .dc-feature[data-open="false"] { display: none; }
 
 /* ── レスポンシブ ─────────────────────────────────────────────── */
-/* タブレット以下: ハンバーガーナビへ切替 */
-@media (max-width: 920px) {
+/* 幅1180px以下: ハンバーガーナビへ切替（メニュー9項目が1行に収まらないため） */
+@media (max-width: 1180px) {
   header { position: sticky; }
   header > div {
     position: relative;
@@ -159,3 +161,8 @@ div.photo-slot[data-slot="column-feature"] {
 
 /* 空き家グラフのスクロール案内（スマホのみ表示） */
 .akc-hint { display: none; margin: 8px 0 0; font-size: 11px; letter-spacing: 0.04em; color: #9db0bb; text-align: center; }
+
+/* 幅1181px以上: メニュー9項目＋無料相談を1行に収めるため項目の間隔を詰める */
+@media (min-width: 1181px) {
+  .site-nav { column-gap: 12px !important; }
+}
