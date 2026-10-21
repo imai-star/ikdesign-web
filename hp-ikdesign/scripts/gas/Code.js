@@ -1,11 +1,13 @@
 // IKDesign HP お問い合わせ受付（Google Apps Script ウェブアプリ）
 // - ikd-kk.com/contact のフォームから JSON を受け取り、スプレッドシートに記録して
-//   info@ikd-kk.com へ通知、お客様へ自動返信する。
+//   imai@maintecs.com へ通知、お客様へ自動返信する（2026-10-21 自社サイトの問い合わせは全部 imai@ に集める方針）。
 // - imai@maintecs.com のアカウントで「自分として実行・全員がアクセス可」でデプロイする
 //   （info@ikd-kk.com はログイン用アカウントではないため。自動返信の返信先は info@ にする）。
 // - 初回だけエディタで authorize() を実行して権限を許可すること。
 
-var NOTIFY_TO = 'info@ikd-kk.com';
+var NOTIFY_TO = 'imai@maintecs.com';
+// お客様への自動返信の返信先（お客様に見せる窓口）は info@ikd-kk.com のまま
+var REPLY_TO = 'info@ikd-kk.com';
 
 var HEADERS = ['受付日時', 'ご相談の種類', 'お名前', 'フリガナ', '会社名', 'メール', '電話', '希望の連絡方法', 'ご相談内容', '送信元ページ'];
 var LIMITS = { name: 60, kana: 60, company: 100, email: 120, phone: 30, category: 40, contactBy: 20, message: 4000, page: 200 };
@@ -89,7 +91,7 @@ function sendNotify_(d) {
   ].join('\n');
   MailApp.sendEmail({
     to: NOTIFY_TO,
-    subject: '【HP問い合わせ】' + d.category + '／' + d.name + ' 様',
+    subject: '【HP:IKDesign】' + d.category + '／' + d.name + ' 様',
     body: body,
     replyTo: d.email,
     name: 'IKDesign HP'
@@ -126,7 +128,7 @@ function sendAutoReply_(d) {
     to: d.email,
     subject: '【IKDesign】お問い合わせを受け付けました',
     body: body,
-    replyTo: NOTIFY_TO,
+    replyTo: REPLY_TO,
     name: 'IKDesign株式会社'
   });
 }
