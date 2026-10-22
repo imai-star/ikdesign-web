@@ -871,10 +871,11 @@ function handleSubmit(e) {
       '連絡方法: ' + data.get('contact_method'),
       '',
       data.get('message')
-    ].join('\n')
+    ].join('\n'),
+    page: 'lp.ikd-kk.com（案内ページ）'
   };
 
-  fetch('https://script.google.com/macros/s/AKfycby_Jib0s71py_FX1gwsupX0emqJnPca3JjNSifYEXMUIGOazdIt5VB3L1p8BcZCscBYyw/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzmTFU5LohQh6al3WPMIkMhSLZP8eSGzhvwc8DMens8pnSsZ6MdCB815K4S1kZD51hf/exec', {
     method: 'POST',
     headers: {'Content-Type': 'text/plain'},
     body: JSON.stringify(payload)
