@@ -62,7 +62,8 @@ function doPost(e) {
     }
 
     sendNotify_(d);
-    sendAutoReply_(d);
+    // 営業・ご提案には自動返信を送らない（フォームに「ご返信はいたしかねます」と表示している）
+    if (d.category !== '営業・ご提案') sendAutoReply_(d);
     return json_({ result: 'success' });
   } catch (err) {
     console.error(err);
